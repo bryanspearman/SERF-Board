@@ -1,11 +1,11 @@
 {
   "name": "biff-assist",
   "version": "1.0.0",
-  "description": "An app used to assist people with creating proper responses to high conflict messages that they receive.",
+  "description": "An app to assist people with creating proper responses to high conflict messages that they receive.",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
-    "start": "node server.js"
+    "test": "mocha --exit",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -14,9 +14,6 @@
   "keywords": [
     "node",
     "express",
-    "mocha",
-    "travis",
-    "chai",
     "CRUD"
   ],
   "author": "Bryan Spearman",
@@ -26,6 +23,21 @@
   },
   "homepage": "https://github.com/bryanspearman/biff-assist#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.8",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "faker": "^4.1.0",
+    "mocha": "^5.2.0"
   }
 }
