@@ -3,15 +3,15 @@ $(function placeHolderContent() {
     `<ul>
       <li>
         <p class="response-list-titles">Response Title 1</p>
-        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis...</p>
       </li>
       <li>
         <p class="response-list-titles">Response Title 2</p>
-        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis...</p>
       </li>
       <li>
         <p class="response-list-titles">Response Title 3</p>
-        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p class="response-list-blurps">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis...</p>
       </li>
     </ul>`
   );
