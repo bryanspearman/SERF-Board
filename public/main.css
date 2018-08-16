@@ -39,6 +39,11 @@ html {
   padding: 0px;
 }
 
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
 /* Mobile defaults */
 .col-3,
 .col-4,
@@ -99,9 +104,9 @@ body {
     list-style-type: none;
   }
 
-  .dynamic-1 li {
+  .dynamic-1 ul li {
     margin: 0px;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
   }
 
   .dynamic-1 ul li:nth-child(even) {
