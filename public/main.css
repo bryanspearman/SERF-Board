@@ -35,6 +35,8 @@
 html {
   font-family: "Open Sans", sans-serif;
   color: #444;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Mobile defaults */
@@ -85,6 +87,7 @@ body {
   }
   .static {
     background-color: #f2ebe2;
+    padding: 20px;
   }
 
   .dynamic-1 {
@@ -92,21 +95,21 @@ body {
   }
 
   .dynamic-1 ul {
+    margin: 0px;
     list-style-type: none;
-    margin: 0;
   }
 
   .dynamic-1 li {
-    margin: 0;
+    margin: 0px;
     padding: 5px;
   }
 
-  .dynamic-1 li:nth-child(even) {
-    background-color: ##4c9794!;
+  .dynamic-1 ul li:nth-child(even) {
+    background-color: #4c9794;
   }
 
-  .dynamic-1 li:nth-child(odd) {
-    background-color: ##7accc8;
+  .dynamic-1 ul li:nth-child(odd) {
+    background-color: #7accc8;
   }
 
   .dynamic-2 {
@@ -114,11 +117,11 @@ body {
   }
 
   .response-list-titles {
-    font-size: 0.75em;
-    margin-bottom: -5px;
+    font-size: 0.85em;
+    margin-bottom: -15px;
   }
 
   .response-list-blurps {
-    font-size: 0.55em;
+    font-size: 0.75em;
   }
 }
