@@ -82,7 +82,7 @@ body {
   }
 
   body {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .static {
     background-color: #f2ebe2;
@@ -92,7 +92,31 @@ body {
     background-color: #fcf6ec;
   }
 
+  .dynamic-1 ul {
+    list-style-type: none;
+  }
+
+  .dynamic-1 li {
+    padding: 10px;
+  }
+
+  .dynamic-1 li:nth-child(even) {
+    background-color: ##4c9794!;
+  }
+
+  .dynamic-1 li:nth-child(odd) {
+    background-color: ##7accc8;
+  }
+
   .dynamic-2 {
     background-color: #fff;
+  }
+
+  .response-list-titles {
+    font-size: 1.1em;
+  }
+
+  .response-list-blurps {
+    font-size: 0.75em;
   }
 }
