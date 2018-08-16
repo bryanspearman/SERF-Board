@@ -1,3 +1,4 @@
+/* Globals */
 *,
 *:before,
 *:after {
@@ -32,6 +33,11 @@
   padding-right: 1.04166666%;
 }
 
+html {
+  font-family: "Open Sans", sans-serif;
+  color: #444;
+}
+
 /* Mobile defaults */
 .col-3,
 .col-4,
@@ -39,6 +45,22 @@
 .col-9,
 .col-12 {
   width: 100%;
+}
+
+body {
+  font-size: 1em;
+}
+
+.static {
+  background-color: #f2ebe2;
+}
+
+.dynamic-1 {
+  background-color: #fcf6ec;
+}
+
+.dynamic-2 {
+  background-color: #fff;
 }
 
 /* Non-mobile, grid */
@@ -58,7 +80,19 @@
   .col-12 {
     width: 100%;
   }
-  html {
-    background-color: #e1e1e1;
+
+  body {
+    font-size: 1.5em;
+  }
+  .static {
+    background-color: #f2ebe2;
+  }
+
+  .dynamic-1 {
+    background-color: #fcf6ec;
+  }
+
+  .dynamic-2 {
+    background-color: #fff;
   }
 }
