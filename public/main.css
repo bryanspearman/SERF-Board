@@ -45,13 +45,6 @@ body {
   margin: 0px;
 }
 
-button {
-  width: 350px;
-  height: 50px;
-  border: none;
-  padding: 10px;
-}
-
 /* Mobile defaults */
 .col-3,
 .col-4,
@@ -63,6 +56,14 @@ button {
 
 main {
   font-size: 1em;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .static {
@@ -100,9 +101,18 @@ main {
   }
   .landingPage {
     margin: 0 auto;
+    padding-top: 50px;
     width: 1000px;
     text-align: center;
   }
+
+  button {
+    width: 350px;
+    height: 50px;
+    border: none;
+    padding: 10px;
+  }
+
   .static {
     background-color: #f2ebe2;
     padding: 20px;
@@ -150,7 +160,7 @@ main {
 
   footer {
     padding: 10px;
-    font-size: 0.85em;
+    font-size: 0.5em;
   }
 
   .business_links {
@@ -158,12 +168,13 @@ main {
   }
 
   .business_links ul {
-    list-style-type: none;
+    list-style: none;
     display: inline-block;
   }
 
   .business_links ul li {
-    padding-right: 10px;
+    display: inline-block;
+    padding-left: 10px;
   }
 
   .copyright {
