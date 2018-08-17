@@ -37,11 +37,19 @@ html {
   color: #444;
   margin: 0px;
   padding: 0px;
+  background-color: #c8e9e7;
 }
 
 body {
   padding: 0px;
   margin: 0px;
+}
+
+button {
+  width: 377px;
+  height: 60px;
+  border: none;
+  padding: 15px;
 }
 
 /* Mobile defaults */
@@ -100,13 +108,13 @@ body {
   }
 
   .dynamic-1 ul {
-    margin: 0px;
+    margin: 0 auto;
     list-style-type: none;
   }
 
   .dynamic-1 ul li {
     margin: 0px;
-    padding: 5px 5px 5px 0px;
+    padding: 5px;
   }
 
   .dynamic-1 ul li:nth-child(even) {
@@ -128,5 +136,27 @@ body {
 
   .response-list-blurps {
     font-size: 0.75em;
+  }
+
+  footer {
+    padding: 10px;
+  }
+
+  .business_links {
+    text-align: left;
+    font-size: 0.85em;
+  }
+
+  .business_links ul {
+    list-style-type: none;
+    display: inline;
+  }
+
+  .business_links ul li {
+    padding-right: 10px;
+  }
+
+  .copyright {
+    text-align: right;
   }
 }
