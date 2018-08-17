@@ -107,6 +107,11 @@ body {
     background-color: #fcf6ec;
   }
 
+  .response-list-header {
+    background-color: #e1e1e1;
+    padding: 20px;
+  }
+
   .dynamic-1 ul {
     margin: 0 auto;
     list-style-type: none;
