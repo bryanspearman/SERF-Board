@@ -98,6 +98,10 @@ body {
   body {
     font-size: 1em;
   }
+  .landingPage {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
   .static {
     background-color: #f2ebe2;
     padding: 20px;
@@ -145,16 +149,16 @@ body {
 
   footer {
     padding: 10px;
+    font-size: 0.85em;
   }
 
   .business_links {
     text-align: left;
-    font-size: 0.85em;
   }
 
   .business_links ul {
     list-style-type: none;
-    display: inline;
+    display: inline-block;
   }
 
   .business_links ul li {
