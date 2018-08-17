@@ -1,4 +1,4 @@
-$(function placeHolderContent() {
+$(function() {
   $(".dynamic-1").append(
     `
     <header role="banner" class="response-list-header">Previous Responses</header>
@@ -34,5 +34,3 @@ $(function placeHolderContent() {
     `<p><em>jQuery here. Just adding some text to the DOM, don't mind me</em></p>`
   );
 });
-
-$(placeHolderContent);

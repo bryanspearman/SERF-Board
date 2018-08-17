@@ -100,7 +100,7 @@ body {
   }
   .landingPage {
     margin: 0 auto;
-    max-width: 1000px;
+    width: 1000px;
   }
   .static {
     background-color: #f2ebe2;
