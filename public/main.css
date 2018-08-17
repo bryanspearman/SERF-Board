@@ -46,10 +46,10 @@ body {
 }
 
 button {
-  width: 377px;
-  height: 60px;
+  width: 350px;
+  height: 50px;
   border: none;
-  padding: 15px;
+  padding: 10px;
 }
 
 /* Mobile defaults */
@@ -61,7 +61,7 @@ button {
   width: 100%;
 }
 
-body {
+main {
   font-size: 1em;
 }
 
@@ -95,12 +95,13 @@ body {
     width: 100%;
   }
 
-  body {
+  main {
     font-size: 1em;
   }
   .landingPage {
     margin: 0 auto;
     width: 1000px;
+    text-align: center;
   }
   .static {
     background-color: #f2ebe2;
