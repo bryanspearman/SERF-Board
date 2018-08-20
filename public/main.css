@@ -102,7 +102,7 @@ button {
   .landingPage {
     margin: 0 auto;
     padding-top: 50px;
-    width: 1000px;
+    width: 100%;
     text-align: center;
   }
 

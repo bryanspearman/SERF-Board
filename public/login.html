@@ -7,53 +7,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="An application for assisting people in creating tactful responses to high conflict messages.">
     <meta name="author" content="Anne and Bryan Spearman">
-    <meta name="keywords" content="high conflict, custody battle, B.I.F.F.&reg; Assistant">
+    <meta name="keywords" content="high conflict, custody battle">
     <link rel=" stylesheet " href="/main.css ">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet " href="https://use.fontawesome.com/releases/v5.0.13/css/all.css " integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp "
         crossorigin="anonymous ">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Yantramanav " rel="stylesheet ">
-    <title>Resolve Counseling - B.I.F.F.&reg; Assistant</title>
+    <title>Resolve Counseling - Login</title>
 </head>
 
-<body>
+<body class="landingPage">
     <main role="main">
         <div class="row">
-            <div class="col-3 ">
-                <section role="region" class="static">
+            <div class="col-12">
+                <section role="region">
                     <header role="banner">
                         <p>LOGO Placeholder</p>
+                        <p>B.I.F.F.&reg; Assistant</p>
                     </header>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#">Create B.I.F.F.&reg; Response</a>
-                            </li>
-                            <li>
-                                <a href="#">Logout</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-            </div>
-            <div class="col-3 ">
-                <section role="region" class="dynamic-1">
+                    <form action="#" style="border:1px solid #ccc">
+                        <div class="form-container">
+                            <h1>Create Account</h1>
+                            <p>You need an account to create and save messages securely.</p>
+                            <hr>
+                            <label for="userName">
+                                <b>Username</b>
+                            </label>
+                            <input type="text" placeholder="Create username" name="userName" required>
 
-                </section>
-            </div>
-            <div class="col-6 ">
-                <section role="region" class="dynamic-2">
+                            <label for="psw">
+                                <b>Password</b>
+                            </label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
 
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                            </label>
+
+                            <p>Your privacy is of the highest importance to us:
+                                <a href="#" style="color:dodgerblue">Privacy Policy</a>.</p>
+
+                            <div class="clearfix">
+                                <button type="button" class="cancelbtn">Cancel</button>
+                                <button type="submit" class="signupbtn">Create Account</button>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
         </div>
     </main>
-    <footer role="contentinfo ">
+    <footer role="contentinfo">
         <div class="row">
-            <div class="col-6 ">
+            <div class="col-6">
                 <section role="region" class="business_links">
                     <ul>
                         <li>
@@ -68,7 +74,7 @@
                     </ul>
                 </section>
             </div>
-            <div class="col-6 ">
+            <div class="col-6">
                 <section role="region" class="copyright">
                     <p>&copy;Copyright 2018 Resolve Counseling</p>
                 </section>

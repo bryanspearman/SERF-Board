@@ -38,19 +38,16 @@ const jwtAuth = passport.authenticate("jwt", { session: false });
 
 // A protected endpoint which needs a valid JWT to access it
 app.get("/api/protected", jwtAuth, (req, res) => {
-  return res.json({
-    data: "Hey look this thing works"
-  });
+  return res.json(req.user);
 });
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/responses", (req, res) => {
+app.get("/responses", jwtAuth, (req, res) => {
   userContent
-    .find()
-    .limit(10)
+    .find({ userId: req.user.id })
     .then(responses => {
       res.json({
         responses: responses.map(response => response.serialize())
@@ -63,7 +60,7 @@ app.get("/responses", (req, res) => {
 });
 
 //by ID
-app.get("/responses/:id", (req, res) => {
+app.get("/responses/:id", jwtAuth, (req, res) => {
   userContent
     .findById(req.params.id)
     .then(response => res.json(response.serialize()))
@@ -73,7 +70,7 @@ app.get("/responses/:id", (req, res) => {
     });
 });
 
-app.post("/responses", (req, res) => {
+app.post("/responses", jwtAuth, (req, res) => {
   const requiredFields = ["title", "response"];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
@@ -88,7 +85,8 @@ app.post("/responses", (req, res) => {
     .create({
       title: req.body.title,
       response: req.body.response,
-      receivedMessage: req.body.receivedMessage
+      receivedMessage: req.body.receivedMessage,
+      userId: req.user.id
     })
     .then(response => res.status(201).json(response.serialize()))
     .catch(err => {
@@ -97,7 +95,7 @@ app.post("/responses", (req, res) => {
     });
 });
 
-app.put("/responses/:id", (req, res) => {
+app.put("/responses/:id", jwtAuth, (req, res) => {
   // does id in the request and the one in request body match
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     const message =
@@ -122,7 +120,7 @@ app.put("/responses/:id", (req, res) => {
     .catch(err => res.status(500).json({ message: "Internal server error" }));
 });
 
-app.delete("/responses/:id", (req, res) => {
+app.delete("/responses/:id", jwtAuth, (req, res) => {
   userContent
     .findByIdAndRemove(req.params.id)
     .then(response => res.status(204).end())

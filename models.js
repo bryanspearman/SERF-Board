@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const userContentSchema = mongoose.Schema({
   title: { type: String, required: true },
   response: { type: String, required: true },
-  receivedMessage: { type: String }
+  receivedMessage: { type: String },
+  userId: { type: String, required: true }
 });
 
 userContentSchema.methods.serialize = function() {
@@ -13,7 +14,8 @@ userContentSchema.methods.serialize = function() {
     id: this._id,
     title: this.title,
     response: this.response,
-    receivedMessage: this.receivedMessage
+    receivedMessage: this.receivedMessage,
+    userId: this.userId
   };
 };
 
