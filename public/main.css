@@ -55,7 +55,7 @@ body {
 }
 
 main {
-  font-size: 1em;
+  font-size: 13px;
 }
 
 button {
@@ -97,20 +97,78 @@ button {
   }
 
   main {
-    font-size: 1em;
+    font-size: 13px;
   }
   .landingPage {
-    margin: 0 auto;
     padding-top: 50px;
-    width: 100%;
     text-align: center;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
   }
 
   button {
-    width: 350px;
-    height: 50px;
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
     border: none;
-    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity: 1;
+  }
+
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+  .cancelbtn,
+  .signupbtn {
+    float: left;
+    width: 50%;
+  }
+
+  .form-container {
+    padding: 16px;
+    width: 450px;
+  }
+
+  .createAccount-btn {
+    background: #4c9794;
+    width: 300px;
+    height: 40px;
+    border: none;
+    padding: 5px;
+  }
+
+  .signIn-btn {
+    background: #7accc8;
+    width: 300px;
+    height: 40px;
+    border: none;
+    padding: 5px;
   }
 
   .static {
@@ -150,17 +208,17 @@ button {
   }
 
   .response-list-titles {
-    font-size: 0.85em;
+    font-size: 12px;
     margin-bottom: -15px;
   }
 
   .response-list-blurps {
-    font-size: 0.75em;
+    font-size: 10px;
   }
 
   footer {
     padding: 10px;
-    font-size: 0.5em;
+    font-size: 10px;
   }
 
   .business_links {
@@ -169,7 +227,6 @@ button {
 
   .business_links ul {
     list-style: none;
-    display: inline-block;
   }
 
   .business_links ul li {
@@ -179,5 +236,6 @@ button {
 
   .copyright {
     text-align: right;
+    padding-right: 10px;
   }
 }
