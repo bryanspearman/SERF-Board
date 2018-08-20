@@ -93,10 +93,10 @@ main {
     width: 600px;
   }
 
-  .form-header {
-    position: relative;
+  .center {
     margin: 0 auto;
-    width: 100%;
+    width: 300px;
+    text-align: center;
   }
 
   input[type="text"],
@@ -154,7 +154,7 @@ main {
   }
 
   .form-container {
-    background: #4c9794;
+    background: #fff;
     padding: 16px;
   }
 
