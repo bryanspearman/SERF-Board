@@ -55,7 +55,7 @@ body {
 }
 
 main {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 button {
@@ -97,11 +97,13 @@ button {
   }
 
   main {
-    font-size: 13px;
+    font-size: 14px;
   }
   .landingPage {
+    position: relative;
     padding-top: 50px;
     margin: 0 auto;
+    width: 33.3%;
   }
   input[type="text"],
   input[type="password"] {
@@ -154,11 +156,6 @@ button {
     content: "";
     clear: both;
     display: table;
-  }
-
-  form {
-    width: 50%;
-    margin: 0 auto;
   }
 
   .form-container {
