@@ -150,9 +150,20 @@ button {
     width: 50%;
   }
 
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  form {
+    width: 500px;
+    margin: 0 auto;
+  }
+
   .form-container {
+    background: #e1e1e1;
     padding: 16px;
-    width: 450px;
   }
 
   .createAccount-btn {
@@ -221,10 +232,6 @@ button {
     font-size: 10px;
   }
 
-  .business_links {
-    text-align: left;
-  }
-
   .business_links ul {
     list-style: none;
   }
@@ -235,7 +242,6 @@ button {
   }
 
   .copyright {
-    text-align: right;
     padding-right: 10px;
   }
 }
