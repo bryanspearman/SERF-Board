@@ -11,7 +11,7 @@
   margin: 0 auto;
 }
 
-/* Clearfix */
+/* Row Clearfix */
 .row::before,
 .row::after {
   display: table;
@@ -25,7 +25,6 @@
 .col-3,
 .col-4,
 .col-6,
-.col-9,
 .col-12 {
   float: left;
   padding-left: 1.04166666%;
@@ -49,21 +48,12 @@ body {
 .col-3,
 .col-4,
 .col-6,
-.col-9,
 .col-12 {
   width: 100%;
 }
 
 main {
   font-size: 14px;
-}
-
-button {
-  width: 100%;
-  height: 50px;
-  border: none;
-  padding: 10px;
-  margin: 0 auto;
 }
 
 .static {
@@ -89,9 +79,6 @@ button {
   .col-6 {
     width: 50%;
   }
-  .col-9 {
-    widows: 75%;
-  }
   .col-12 {
     width: 100%;
   }
@@ -107,7 +94,7 @@ button {
   }
   input[type="text"],
   input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
@@ -129,11 +116,11 @@ button {
   button {
     background-color: #4caf50;
     color: white;
-    padding: 14px 20px;
+    padding: 10px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 90%;
     opacity: 0.9;
   }
 
@@ -142,14 +129,14 @@ button {
   }
 
   .cancelbtn {
-    padding: 14px 20px;
+    padding: 10px;
     background-color: #f44336;
   }
 
   .cancelbtn,
   .signupbtn {
     float: left;
-    width: 50%;
+    width: 45%;
   }
 
   .clearfix::after {
