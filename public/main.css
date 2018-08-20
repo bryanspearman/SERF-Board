@@ -92,14 +92,20 @@ main {
     margin: 0 auto;
     width: 33.3%;
   }
+
+  .form-header {
+    margin: 0 auto;
+  }
+
   input[type="text"],
   input[type="password"] {
-    width: 90%;
+    width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
+    overflow: hidden;
   }
 
   input[type="text"]:focus,
@@ -120,7 +126,7 @@ main {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 90%;
+    width: 100%;
     opacity: 0.9;
   }
 
@@ -136,7 +142,7 @@ main {
   .cancelbtn,
   .signupbtn {
     float: left;
-    width: 45%;
+    width: 50%;
   }
 
   .clearfix::after {
@@ -146,7 +152,7 @@ main {
   }
 
   .form-container {
-    background: #e1e1e1;
+    background: #4c9794;
     padding: 16px;
   }
 
@@ -156,6 +162,7 @@ main {
     height: 40px;
     border: none;
     padding: 5px;
+    cursor: pointer;
   }
 
   .signIn-btn {
@@ -164,6 +171,7 @@ main {
     height: 40px;
     border: none;
     padding: 5px;
+    cursor: pointer;
   }
 
   .static {
@@ -212,15 +220,12 @@ main {
   }
 
   footer {
-    padding: 10px;
     font-size: 10px;
   }
 
-  .business_links ul {
-    list-style: none;
-  }
-
   .business_links ul li {
+    margin: 0px;
+    list-style: none;
     display: inline-block;
     padding-left: 10px;
   }
