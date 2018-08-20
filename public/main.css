@@ -101,7 +101,7 @@ button {
   }
   .landingPage {
     padding-top: 50px;
-    text-align: center;
+    margin: 0 auto;
   }
   input[type="text"],
   input[type="password"] {
@@ -157,7 +157,7 @@ button {
   }
 
   form {
-    width: 500px;
+    width: 50%;
     margin: 0 auto;
   }
 
