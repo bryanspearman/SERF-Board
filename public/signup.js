@@ -48,8 +48,8 @@ function createAccount() {
     const queryUserName = document.getElementById("userName").value;
     const queryPassword = document.getElementById("pass2").value;
     const userData = {
-      firstName: queryfirstName,
-      lastName: querylastName,
+      firstName: queryFirstName,
+      lastName: queryLastName,
       userName: queryUserName,
       password: queryPassword
     };
