@@ -43,11 +43,6 @@
                             </label>
                             <input type="text" placeholder="Enter last name" name="lastName" required>
 
-                            <label for="email">
-                                <b>Email</b>
-                            </label>
-                            <input type="text" placeholder="Enter email" name="email" required>
-
                             <label for="userName">
                                 <b>Username</b>
                             </label>
@@ -56,19 +51,16 @@
                             <label for="psw">
                                 <b>Password</b>
                             </label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input type="password" placeholder="Enter Password" name="pass1" id="pass1" required>
 
-                            <label for="psw-repeat">
-                                <b>Repeat Password</b>
+                            <label for="psw-confirm">
+                                <b>Confirm Password</b>
                             </label>
-                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                            </label>
+                            <input type="password" placeholder="Confirm Password" name="pass2" id="pass2" onkeyup="checkPass(); return false;" required>
+                            <span id="confirmMessage" class="confirmMessage"></span>
 
                             <p>Your privacy is extremely importance to us:
-                                <a href="#" style="color:dodgerblue">Privacy Policy</a>.</p>
+                                <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank" title="Privacy Policy">Privacy Policy</a>.</p>
 
                             <div class="clearfix">
                                 <button type="button" class="cancelbtn">Cancel</button>
@@ -108,6 +100,7 @@
     <script src="//code.jquery.com/jquery-2.2.1.min.js " integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="
         anonymous "></script>
     <script src="index.js "></script>
+    <script src="signup.js "></script>
 </body>
 
 </html>
