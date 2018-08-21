@@ -24,7 +24,7 @@ function postAccountInfo(userData, callback) {
   const settings = {
     url: signUpURL,
     data: {
-      userName: userData.userName,
+      username: userData.username,
       password: userData.password,
       firstName: userData.firstName,
       lastName: userData.lastName
@@ -50,7 +50,7 @@ function createAccount() {
     const userData = {
       firstName: queryFirstName,
       lastName: queryLastName,
-      userName: queryUserName,
+      username: queryUserName,
       password: queryPassword
     };
     postAccountInfo(userData, signUpCallback);
