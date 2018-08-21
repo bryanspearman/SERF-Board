@@ -167,6 +167,7 @@ main {
     border: none;
     padding: 5px;
     cursor: pointer;
+    font-size: 14px;
   }
 
   .signIn-btn {
@@ -176,6 +177,7 @@ main {
     border: none;
     padding: 5px;
     cursor: pointer;
+    font-size: 14px;
   }
 
   .static {
@@ -225,6 +227,7 @@ main {
 
   footer {
     font-size: 10px;
+    text-align: center;
   }
 
   .business_links ul li {
@@ -232,9 +235,6 @@ main {
     text-align: left;
     list-style: none;
     display: inline-block;
-  }
-
-  .copyright {
-    text-align: right;
+    padding-right: 10px;
   }
 }
