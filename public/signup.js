@@ -9,7 +9,7 @@ function checkPass() {
   var goodColor = "#66cc66";
   var badColor = "#ff6666";
 
-  if (pass1.value === pass2.value) {
+  if (pass1.value == pass2.value) {
     pass2.style.backgroundColor = goodColor;
     message.style.color = goodColor;
     message.innerHTML = "Passwords Match!";
@@ -19,4 +19,3 @@ function checkPass() {
     message.innerHTML = "Passwords Do Not Match!";
   }
 }
-$(checkPass);
