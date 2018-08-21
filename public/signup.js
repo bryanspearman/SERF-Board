@@ -53,11 +53,6 @@ function createAccount() {
       userName: queryUserName,
       password: queryPassword
     };
-    queryFirstName.val("");
-    queryLastName.val("");
-    queryUserName.val("");
-    queryPassword.val("");
-    queryFirstName.focus();
     postAccountInfo(userData, signUpCallback);
   });
 }
