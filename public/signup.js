@@ -18,7 +18,7 @@ function checkPass() {
   }
 }
 
-const signUpURL = "https://gentle-lake-36024.herokuapp.com/api/users";
+const signUpURL = "https://gentle-lake-36024.herokuapp.com/";
 
 function postAccountInfo(userData, callback) {
   const settings = {
@@ -36,22 +36,22 @@ function postAccountInfo(userData, callback) {
   $.ajax(settings);
 }
 
-function signUpCallback() {
+function signUpCallback(data) {
   window.location = "/login.html";
 }
 
 function createAccount() {
   $(".js-signUp-form").submit(event => {
     event.preventDefault();
-    const queryFirstName = document.getElementById("firstName").value;
-    const queryLastName = document.getElementById("lastName").value;
-    const queryUserName = document.getElementById("userName").value;
-    const queryPassword = document.getElementById("pass2").value;
+    const queryFirstName = $(event.currentTarget).find("#firstName");
+    const queryLastName = $(event.currentTarget).find("#lastName");
+    const queryUserName = $(event.currentTarget).find("#userName");
+    const queryPassword = $(event.currentTarget).find("#pass2");
     const userData = {
-      firstName: queryFirstName,
-      lastName: queryLastName,
-      username: queryUserName,
-      password: queryPassword
+      firstName: queryFirstName.val(),
+      lastName: queryLastName.val(),
+      username: queryUserName.val(),
+      password: queryPassword.val()
     };
     postAccountInfo(userData, signUpCallback);
   });
