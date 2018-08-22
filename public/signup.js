@@ -18,7 +18,7 @@ function checkPass() {
   }
 }
 
-const signUpURL = "https://gentle-lake-36024.herokuapp.com/";
+const signUpURL = "https://gentle-lake-36024.herokuapp.com/api/users";
 
 function postAccountInfo(userData, callback) {
   const settings = {
