@@ -33,34 +33,20 @@
                             <p>You need an account to create and save messages securely.</p>
                             <hr>
 
-                            <label for="firstName">
-                                <b>First Name</b>
+                            <label for="name-txt">
+                                <b>Name</b>
                             </label>
-                            <input type="text" placeholder="Enter first name" name="firstName" id="firstName" required>
+                            <input type="text" id="name-txt" required>
 
-                            <label for="lastName">
-                                <b>Last Name</b>
+                            <label for="username-txt">
+                                <b>Create Username</b>
                             </label>
-                            <input type="text" placeholder="Enter last name" name="lastName" id="lastName" required>
+                            <input type="text" id="username-txt" required>
 
-                            <label for="userName">
-                                <b>Username</b>
+                            <label for="password-txt">
+                                <b>Create Password</b>
                             </label>
-                            <input type="text" placeholder="Create username" name="userName" id="userName" required>
-
-                            <label for="password">
-                                <b>Password</b>
-                            </label>
-                            <input type="password" placeholder="Enter Password" name="pass1" id="pass1" required>
-
-                            <label for="password-confirm">
-                                <b>Confirm Password</b>
-                            </label>
-                            <input type="password" placeholder="Confirm Password" name="pass2" id="pass2" onkeyup="checkPass(); return false;" required>
-                            <span id="confirmMessage" class="confirmMessage"></span>
-
-                            <p>Your privacy is extremely importance to us:
-                                <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank" title="Privacy Policy">Privacy Policy</a>.</p>
+                            <input type="password" id="password-txt" required>
 
                             <div class="clearfix">
                                 <button type="submit" class="signupbtn">Create Account</button>
@@ -81,10 +67,10 @@
                         &copy;Copyright 2018 Resolve Counseling
                     </li>
                     <li>
-                        <a href="#">Resolve Counseling</a>
+                        <a href="http://www.resolvecounselingsc.com">Resolve Counseling</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="http://greenvillesctherapist.com/privacy-policy/">Privacy Policy</a>
                     </li>
                     <li>
                         <a href="#">Terms and Conditions</a>
@@ -96,10 +82,10 @@
     </footer>
 
 
-    <script src="//code.jquery.com/jquery-2.2.1.min.js " integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="
-        anonymous "></script>
-    <script src="index.js "></script>
-    <script src="signup.js "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./auth.js"></script>
+    <script src="./utils.js"></script>
 </body>
 
 </html>

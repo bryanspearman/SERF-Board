@@ -86,6 +86,7 @@ main {
   main {
     font-size: 14px;
   }
+
   .landingPage {
     padding-top: 50px;
     margin: 0 auto;
@@ -112,6 +113,7 @@ main {
     border: none;
     background: #f1f1f1;
     position: relative;
+    font-size: 14px;
   }
 
   input[type="text"]:focus,
@@ -125,6 +127,10 @@ main {
     margin-bottom: 25px;
   }
 
+  label {
+    font-size: 16px;
+  }
+
   button {
     background-color: #4caf50;
     padding: 10px 0px;
@@ -133,20 +139,11 @@ main {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    font-size: 14px;
   }
 
   button:hover {
     opacity: 1;
-  }
-
-  .cancelbtn {
-    background-color: #f44336;
-  }
-
-  .cancelbtn,
-  .signupbtn {
-    float: left;
-    width: 50%;
   }
 
   .clearfix::after {
@@ -157,7 +154,7 @@ main {
 
   .form-container {
     background: #fff;
-    padding: 16px;
+    padding: 20px;
   }
 
   .createAccount-btn {
