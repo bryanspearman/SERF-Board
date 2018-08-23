@@ -56,19 +56,19 @@ main {
   font-size: 14px;
 }
 
-.static {
+.nav {
   background-color: #f2ebe2;
 }
 
-.dynamic-1 {
+.dynamic-area {
   background-color: #fcf6ec;
 }
 
-.dynamic-2 {
+.writing-area {
   background-color: #fff;
 }
 
-/* Non-mobile, grid */
+/* **************  Non-mobile, grid ******************* */
 @media only screen and (min-width: 640px) {
   .col-3 {
     width: 25%;
@@ -177,12 +177,18 @@ main {
     font-size: 14px;
   }
 
-  .static {
+  .nav {
     background-color: #f2ebe2;
     padding: 20px;
   }
 
-  .dynamic-1 {
+  .logo {
+    height: 160px;
+    padding: 10px;
+    background-color: #ddcdbb;
+  }
+
+  .dynamic-area {
     background-color: #fcf6ec;
   }
 
@@ -191,25 +197,25 @@ main {
     padding: 20px;
   }
 
-  .dynamic-1 ul {
+  .dynamic-area ul {
     margin: 0 auto;
     list-style-type: none;
   }
 
-  .dynamic-1 ul li {
+  .dynamic-area ul li {
     margin: 0px;
     padding: 5px;
   }
 
-  .dynamic-1 ul li:nth-child(even) {
+  .dynamic-area ul li:nth-child(even) {
     background-color: #4c9794;
   }
 
-  .dynamic-1 ul li:nth-child(odd) {
+  .dynamic-area ul li:nth-child(odd) {
     background-color: #7accc8;
   }
 
-  .dynamic-2 {
+  .writing-area {
     background-color: #fff;
   }
 
