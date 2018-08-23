@@ -25,30 +25,22 @@
                         <p>LOGO Placeholder</p>
                         <p>App Name</p>
                     </header>
-                    <form action="#" style="border:1px solid #ccc">
+                    <form action="#">
                         <div class="form-container">
                             <h1>Login</h1>
                             <hr>
-                            <label for="userName">
+                            <label for="username-txt">
                                 <b>Username</b>
                             </label>
-                            <input type="text" placeholder="Enter Username" name="userName" required>
+                            <input type="text" id="username-txt" required>
 
-                            <label for="psw">
+                            <label for="password-txt">
                                 <b>Password</b>
                             </label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                            </label>
-
-                            <p>Your privacy is extremely importance to us:
-                                <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank" title="Privacy Policy">Privacy Policy</a>.</p>
+                            <input type="password" id="password-txt" required>
 
                             <div class="clearfix">
-                                <button type="button" class="cancelbtn">Cancel</button>
-                                <button type="submit" class="loginbtn">Login</button>
+                                <button type="submit">Login</button>
                             </div>
                         </div>
                     </form>
@@ -65,23 +57,20 @@
                         &copy;Copyright 2018 Resolve Counseling
                     </li>
                     <li>
-                        <a href="#">Resolve Counseling</a>
+                        <a href="http://www.resolvecounselingsc.com" target="_blank">Resolve Counseling</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#">Terms and Conditions</a>
+                        <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank">Privacy Policy</a>
                     </li>
                 </ul>
             </div>
         </div>
-        </div>
     </footer>
 
-    <script src="//code.jquery.com/jquery-2.2.1.min.js " integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="
-        anonymous "></script>
-    <script src="index.js "></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./utils.js"></script>
+    <script src="./auth.js"></script>
 </body>
 
 </html>

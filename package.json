@@ -2,22 +2,19 @@
   "name": "biff-assist",
   "version": "1.0.0",
   "description": "An app to assist people with creating proper responses to high conflict messages that they receive.",
-  "main": "server.js",
+  "main": "./app/start.js",
   "scripts": {
-    "test": "mocha --exit",
-    "start": "node server.js"
+    "start": "node ./app/start.js",
+    "dev": "nodemon ./app/start.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bryanspearman/biff-assist.git"
   },
-  "keywords": [
-    "node",
-    "express",
-    "CRUD"
-  ],
+  "keywords": [],
   "author": "Bryan Spearman",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/bryanspearman/biff-assist/issues"
   },
