@@ -20,9 +20,9 @@ function onSignUpSubmit(event) {
     data: userData,
     callback: user => {
       $(".form-container").html(
-        `<p>User "${
+        `<p class="center">User <b>"${
           user.username
-        }" created, you may now log in.</p> <p><a href="login.html" target='_self'><button class="signIn-btn">Login</button></a></p>`
+        }"</b> successfully created. You may now log in.</p> <p class="center"><a href="login.html" target='_self'><button>Login</button></a></p>`
       );
     }
   });
