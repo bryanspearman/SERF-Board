@@ -3,9 +3,13 @@
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 .row {
+  display: table;
+  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   margin: 0 auto;
@@ -22,18 +26,9 @@
   clear: both;
 }
 
-.col-3,
-.col-4,
-.col-6,
-.col-12 {
-  float: left;
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
-}
-
 html {
   font-family: "Open Sans", sans-serif;
-  color: #444;
+  color: #333;
   margin: 0px;
   padding: 0px;
   background-color: #c8e9e7;
@@ -42,13 +37,15 @@ html {
 body {
   padding: 0px;
   margin: 0px;
+  min-height: 100vh;
 }
 
-/* Mobile defaults */
-.col-3,
-.col-4,
-.col-6,
-.col-12 {
+/******************* Mobile defaults *********************/
+
+.nav,
+.list,
+.edits {
+  display: block;
   width: 100%;
 }
 
@@ -60,42 +57,68 @@ main {
   background-color: #f2ebe2;
 }
 
-.dynamic-area {
+.list {
   background-color: #fcf6ec;
 }
 
-.writing-area {
+.edits {
   background-color: #fff;
 }
 
 /* **************  Non-mobile, grid ******************* */
 @media only screen and (min-width: 640px) {
-  .col-3 {
+  .nav {
+    display: table-cell;
     width: 25%;
+    background-color: #f2ebe2;
+    margin: 0px;
+    padding: 5px;
   }
-  .col-4 {
-    width: 33.33%;
+  .list {
+    display: table-cell;
+    width: 30%;
+    background-color: #fcf6ec;
+    margin: 0px;
+    padding: 0px;
   }
-  .col-6 {
-    width: 50%;
-  }
-  .col-12 {
-    width: 100%;
+  .edits {
+    display: table-cell;
+    width: 45%;
+    background-color: #fff;
+    margin: 0px;
+    padding: 20px;
   }
 
   main {
     font-size: 14px;
   }
 
+  .nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+
+  .nav ul li {
+    display: block;
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .nav header {
+    background: #ddcdbb;
+    padding: 5px 0px 5px 20px;
+  }
+
   .landingPage {
-    padding-top: 50px;
+    padding-top: 40px;
     margin: 0 auto;
     width: 600px;
     text-align: center;
   }
 
   .action_pages {
-    padding-top: 50px;
+    padding-top: 40px;
     margin: 0 auto;
     width: 600px;
   }
@@ -106,7 +129,7 @@ main {
 
   input[type="text"],
   input[type="password"] {
-    width: 95%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0px 22px 0;
     display: inline-block;
@@ -118,6 +141,22 @@ main {
 
   input[type="text"]:focus,
   input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  input[type="textarea"] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0px 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    position: relative;
+    font-size: 14px;
+  }
+
+  input[type="textarea"]:focus {
     background-color: #ddd;
     outline: none;
   }
@@ -177,68 +216,42 @@ main {
     font-size: 14px;
   }
 
-  .nav {
-    background-color: #f2ebe2;
-    padding: 20px;
-  }
-
-  .logo {
-    height: 160px;
+  .list header {
     padding: 10px;
-    background-color: #ddcdbb;
-  }
-
-  .dynamic-area {
     background-color: #fcf6ec;
+    text-align: center;
+    font-weight: bold;
   }
 
-  .response-list-header {
-    background-color: #e1e1e1;
-    padding: 20px;
-  }
-
-  .dynamic-area ul {
-    margin: 0 auto;
+  .list ul {
+    margin: 0px;
+    padding: 0px;
     list-style-type: none;
   }
 
-  .dynamic-area ul li {
+  .list ul li {
+    display: block;
     margin: 0px;
-    padding: 5px;
+    padding: 15px;
   }
 
-  .dynamic-area ul li:nth-child(even) {
+  .list ul li:nth-child(even) {
     background-color: #4c9794;
   }
 
-  .dynamic-area ul li:nth-child(odd) {
+  .list ul li:nth-child(odd) {
     background-color: #7accc8;
   }
 
-  .writing-area {
-    background-color: #fff;
-  }
-
-  .response-list-titles {
-    font-size: 12px;
-    margin-bottom: -15px;
-  }
-
-  .response-list-blurps {
-    font-size: 10px;
+  .list h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: -5px;
   }
 
   footer {
-    padding-top: 20px;
-    font-size: 10px;
+    padding: 30px;
+    font-size: 11px;
     text-align: center;
-  }
-
-  .business_links ul li {
-    margin: 0px;
-    text-align: left;
-    list-style: none;
-    display: inline-block;
-    padding-right: 10px;
   }
 }
