@@ -10,8 +10,8 @@
 .row {
   display: table;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
   margin: 0 auto;
 }
 
@@ -69,21 +69,21 @@ main {
 @media only screen and (min-width: 640px) {
   .nav {
     display: table-cell;
-    width: 25%;
+    width: 15%;
     background-color: #f2ebe2;
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
   }
   .list {
     display: table-cell;
-    width: 30%;
+    width: 25%;
     background-color: #fcf6ec;
     margin: 0px;
     padding: 0px;
   }
   .edits {
     display: table-cell;
-    width: 45%;
+    width: 60%;
     background-color: #fff;
     margin: 0px;
     padding: 20px;
@@ -95,19 +95,35 @@ main {
 
   .nav ul {
     margin: 0px;
-    padding: 0px;
+    padding: 25px;
     list-style-type: none;
   }
 
   .nav ul li {
     display: block;
     margin: 0px;
-    padding: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .nav a:hover {
+    text-decoration: underline;
+    color: #4c9794;
   }
 
   .nav header {
     background: #ddcdbb;
-    padding: 5px 0px 5px 20px;
+    padding: 20px 20px 10px 20px;
+    margin: 0px;
+    height: 50px;
+    display: block;
+    text-align: center;
   }
 
   .landingPage {
@@ -125,6 +141,7 @@ main {
 
   .center {
     text-align: center;
+    padding: 20px;
   }
 
   input[type="text"],
@@ -132,7 +149,7 @@ main {
     width: 90%;
     padding: 15px;
     margin: 5px 0px 22px 0;
-    display: inline-block;
+    display: block;
     border: none;
     background: #f1f1f1;
     position: relative;
@@ -145,19 +162,35 @@ main {
     outline: none;
   }
 
-  input[type="textarea"] {
+  textarea {
     width: 90%;
     padding: 15px;
     margin: 5px 0px 22px 0;
-    display: inline-block;
+    display: block;
     border: none;
     background: #f1f1f1;
     position: relative;
     font-size: 14px;
   }
 
-  input[type="textarea"]:focus {
+  textarea:focus {
     background-color: #ddd;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    background: #f2ebe2;
+    width: 60%;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px auto;
+  }
+
+  input[type="submit"]:focus {
+    background: #ddcdbb;
     outline: none;
   }
 
@@ -171,18 +204,18 @@ main {
   }
 
   button {
-    background-color: #4caf50;
-    padding: 10px 0px;
-    margin: 8px 0;
+    background-color: #f2ebe2;
+    height: 40px;
+    padding: 5px;
+    margin: 5px auto;
     border: none;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
+    width: 60%;
     font-size: 14px;
   }
 
   button:hover {
-    opacity: 1;
+    background-color: #ddcdbb;
   }
 
   .clearfix::after {
@@ -196,51 +229,27 @@ main {
     padding: 20px;
   }
 
-  .createAccount-btn {
-    background: #4c9794;
-    width: 300px;
-    height: 40px;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  .signIn-btn {
-    background: #7accc8;
-    width: 300px;
-    height: 40px;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
   .list header {
-    padding: 10px;
     background-color: #fcf6ec;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .list ul {
+    padding: 20px 20px 10px 20px;
     margin: 0px;
-    padding: 0px;
-    list-style-type: none;
+    height: 46px;
+    display: block;
+    text-align: center;
   }
 
-  .list ul li {
+  .post-summary {
     display: block;
     margin: 0px;
     padding: 15px;
   }
 
-  .list ul li:nth-child(even) {
-    background-color: #4c9794;
+  .post-summary:nth-child(even) {
+    background-color: #c6c0b6;
   }
 
-  .list ul li:nth-child(odd) {
-    background-color: #7accc8;
+  .post-summary:nth-child(odd) {
+    background-color: #e0dad0;
   }
 
   .list h2 {

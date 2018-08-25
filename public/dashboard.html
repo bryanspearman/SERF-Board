@@ -21,7 +21,8 @@
         <div class="row">
             <nav role="nav" class="nav">
                 <header role="banner">
-                    <h1>S.E.R.F. Board</h1>
+                    <h1>Resolve Counseling</h1>
+                    <p><strong>S.E.R.F. Board</strong></p>
                 </header>
                 <ul>
                     <li><a href="#">DashBoard</a></li>
@@ -33,71 +34,55 @@
 
 
             <div class="list">
-                <header>Previous Responses</header>
-                <ul>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                    <li>
-                        <h2>Title Goes Here</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dolores quod libero expedita maxime dolorum nam esse ipsum
-                            ex optio corrupti velit reprehenderit beatae.
-                        </p>
-                    </li>
-                </ul>
+                <header>
+                    <h2>Previous Responses</h2>
+                </header>
+                <div class="responses">
+                    <div class="post-summary" data-post-id="${post.id}">
+                        <h2>${post.title}</h2>
+                        <p>${post.response}</p>
+                        <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
+                        ${editButton} ${deleteButton}
+                    </div>
+                    <div class="post-summary" data-post-id="${post.id}">
+                        <h2>${post.title}</h2>
+                        <p>${post.response}</p>
+                        <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
+                        ${editButton} ${deleteButton}
+                    </div>
+                    <div class="post-summary" data-post-id="${post.id}">
+                        <h2>${post.title}</h2>
+                        <p>${post.response}</p>
+                        <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
+                        ${editButton} ${deleteButton}
+                    </div>
+                    <div class="post-summary" data-post-id="${post.id}">
+                        <h2>${post.title}</h2>
+                        <p>${post.response}</p>
+                        <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
+                        ${editButton} ${deleteButton}
+                    </div>
+                </div>
             </div>
 
 
             <div class="edits">
-                <form>
+                <form action="#" id="response-form">
                     <label for="title">
                         <b>Title</b>
                     </label>
-                    <input type="text">
-
-                    <label for="response">
-                        <b>Response</b>
-                    </label>
-                    <input type="textarea">
-                    <hr>
-                    <label for="receivedMessage">
-                        <b>Received Message</b>
-                    </label>
-                    <input type="textarea">
+                    <input type="text" id="title" placeholder="Give your response a title" required>
                 </form>
+                <label for="response">
+                    <b>Response</b>
+                </label>
+                <textarea form="response-form" rows="20" id="response">Write your B.I.F.F.&reg; response here...</textarea>
+                <hr>
+                <label for="receivedMessage">
+                    <b>Received Message</b>
+                </label>
+                <textarea form="response-form" rows="10" id="receivedMessage">Paste the message that you received here for reference as you write.</textarea>
+                <button class="save">Save</button><button class="cancel">Cancel</button>
             </div>
     </main>
 
@@ -105,6 +90,11 @@
         <p>&copy;Copyright 2018 <a href="http://www.resolvecounselingsc.com" target="_blank">Resolve Counseling</a> |
             <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./utils.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 
