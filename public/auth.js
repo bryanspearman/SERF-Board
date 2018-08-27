@@ -3,6 +3,9 @@ $(document).ready(onReady);
 function onReady() {
   $("#sign-up-form").submit(onSignUpSubmit);
   $("#login-form").submit(onLoginSubmit);
+  $(".nav").on("click", ".logout", function(event) {
+    event.logout();
+  });
 }
 
 function onSignUpSubmit(event) {
@@ -32,6 +35,7 @@ function onLoginSubmit(event) {
   event.preventDefault();
 
   const userData = {
+    name: $("#name-txt").val(),
     username: $("#username-txt").val(),
     password: $("#password-txt").val()
   };
@@ -41,9 +45,10 @@ function onLoginSubmit(event) {
     url: "/api/user/login",
     data: userData,
     callback: response => {
+      localStorage.setItem("name", userData.name);
       localStorage.setItem("username", userData.username);
       localStorage.setItem("jwtToken", response.authToken);
-      window.open("/dashboard.html", "_self");
+      window.open("./dashboard.html", "_self");
     }
   });
 }

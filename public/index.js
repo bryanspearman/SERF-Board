@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 
-let username, jwtToken;
+let Name, jwtToken;
 
 function onReady() {
   checkAuthentication();
@@ -30,35 +30,32 @@ function postToHtml(post) {
     `;
 }
 
-// Handle opening post details
+// Handle editing
 function onPostClick(event) {
   const postId = $(event.currentTarget).attr("data-post-id");
   window.open(`post/details.html?id=${postId}`, "_self");
 }
 
-// Handle deleting posts
+// Handle deleting
 function onPostDeleteBtnClick(event) {
-  /**
-   * Because "onPostDeleteClick" and "onPostClick" both are listening for clicks inside of
-   * #post-summary element, we need to call event.stopImmediatePropagation to avoid both
-   * event listeners firing when we click on the delete button inside #post-summary.
-   */
   event.stopImmediatePropagation();
-  // Step 1: Get the post id to delete from it's parent.
+
   const postID = $(event.currentTarget)
-    .closest("#post-summary")
+    .closest(".post-summary")
     .attr("data-post-id");
-  // Step 2: Verify use is sure of deletion
+
   const userSaidYes = confirm("Are you sure you want to delete this response?");
   if (userSaidYes) {
-    // Step 3: Make ajax call to delete post
     ajax({
       method: "delete",
       url: `/api/post/${postID}`,
       callback: () => {
-        // Step 4: If succesful, reload the posts list
-        alert("Response deleted succesfully, reloading results ...");
-        $.getJSON("api/post", renderPosts);
+        $(".responses").html(
+          `<p class="center"><b>"${post.title}"</b>, successfully deleted</p>`
+        );
+        setTimeout(function() {
+          $.getJSON("api/post", renderPosts);
+        }, 1000);
       }
     });
   }
@@ -67,12 +64,11 @@ function onPostDeleteBtnClick(event) {
 function checkAuthentication() {
   jwtToken = localStorage.getItem("jwtToken");
   if (jwtToken) {
-    username = localStorage.getItem("username");
-    $("#nav-welcome")
-      .html(`Welcome ${username}`)
+    Name = localStorage.getItem("name");
+    $(".welcome")
+      .html(`<p>Welcome ${Name}</p>`)
       .removeAttr("hidden");
-    $("#nav-create").removeAttr("hidden");
   } else {
-    $("#nav-login").removeAttr("hidden");
+    window.open("./login.html", "_self");
   }
 }
