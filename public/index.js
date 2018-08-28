@@ -4,7 +4,7 @@ let Name, jwtToken;
 
 function onReady() {
   checkAuthentication();
-  $.getJSON("api/post", renderPosts);
+  //$.getJSON("api/post", renderPosts);
   $(".responses").on("click", ".delete-post-btn", onPostDeleteBtnClick);
   $(".responses").on("click", ".edit-btn", onPostClick);
 }
