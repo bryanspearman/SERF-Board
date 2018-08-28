@@ -29,6 +29,11 @@ userRouter.post("/refresh", jwtPassportMiddleware, (request, response) => {
   response.json({ authToken });
 });
 
+userRouter.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
 userRouter.post("/", (request, response) => {
   // Checks for required fields inside request body. If any are missing, responds with an error.
   const fieldsNotFound = checkObjectProperties(
