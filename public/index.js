@@ -7,6 +7,7 @@ function onReady() {
   //$.getJSON("api/post", renderPosts);
   $(".responses").on("click", ".delete-post-btn", onPostDeleteBtnClick);
   $(".responses").on("click", ".edit-btn", onPostClick);
+  $(".logout").click(logoutUser);
 }
 
 function renderPosts(posts) {
@@ -59,6 +60,11 @@ function onPostDeleteBtnClick(event) {
       }
     });
   }
+}
+
+function logoutUser(event) {
+  localStorage.removeItem("jwtToken");
+  window.open("./login.html", "_self");
 }
 
 function checkAuthentication() {

@@ -39,25 +39,25 @@
                 </header>
                 <div class="responses">
                     <div class="post-summary" data-post-id="${post.id}">
-                        <h2>${post.title}</h2>
+                        <h3>${post.title}</h3>
                         <p>${post.response}</p>
                         <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
                         ${editButton} ${deleteButton}
                     </div>
                     <div class="post-summary" data-post-id="${post.id}">
-                        <h2>${post.title}</h2>
+                        <h3>${post.title}</h3>
                         <p>${post.response}</p>
                         <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
                         ${editButton} ${deleteButton}
                     </div>
                     <div class="post-summary" data-post-id="${post.id}">
-                        <h2>${post.title}</h2>
+                        <h3>${post.title}</h3>
                         <p>${post.response}</p>
                         <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
                         ${editButton} ${deleteButton}
                     </div>
                     <div class="post-summary" data-post-id="${post.id}">
-                        <h2>${post.title}</h2>
+                        <h3>${post.title}</h3>
                         <p>${post.response}</p>
                         <p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
                         ${editButton} ${deleteButton}
@@ -67,25 +67,7 @@
 
 
             <div class="edits">
-                <header role="banner">
-                    <h2>Your S.E.R.F. Board</h2>
-                </header>
-                <form action="#" id="response-form">
-                    <label for="title">
-                        <b>Title</b>
-                    </label>
-                    <input type="text" id="title" placeholder="Give your response a title" required>
-                </form>
-                <label for="response">
-                    <b>Response</b>
-                </label>
-                <textarea form="response-form" rows="20" id="response">Write your B.I.F.F.&reg; response here...</textarea>
-                <hr>
-                <label for="receivedMessage">
-                    <b>Received Message</b>
-                </label>
-                <textarea form="response-form" rows="10" id="receivedMessage">Paste the message that you received here for reference as you write.</textarea>
-                <button class="save">Save</button> <button class="cancel">Cancel</button>
+
             </div>
     </main>
 
@@ -97,7 +79,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="./utils.js"></script>
-    <script src="./auth.js"></script>
     <script src="./index.js"></script>
 
 </body>

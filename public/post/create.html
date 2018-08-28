@@ -18,7 +18,7 @@
 <body>
     <main role="main">
         <div class="row">
-            <nav role="nav" class="nav">
+            <nav role="nav">
                 <header role="banner">
                     <h1>Resolve Counseling</h1>
                     <p><strong>SERF</strong> Board</p>
@@ -126,17 +126,21 @@
                             <b>Title</b>
                         </label>
                         <input type="text" id="title-txt" placeholder="Give your response a title" required>
+
+                        <label for="response-txt">
+                            <b>Your BIFF Response</b>
+                        </label>
+                        <textarea form="new-post-form" rows="20" id="response-txt">Write your BIFF response here...</textarea>
+                        <hr>
+                        <label for="receivedMessage-txt">
+                            <b>Received Message</b>
+                        </label>
+                        <textarea form="new-post-form" rows="20" id="receivedMessage-txt">Paste the message that you received here for reference as you write.</textarea>
+                        <div class="clearfix">
+                            <input type="submit" value="Save"> <input type="reset" value="Cancel">
+                        </div>
                     </form>
-                    <label for="response-txt">
-                        <b>Your BIFF Response</b>
-                    </label>
-                    <textarea form="new-post-form" rows="20" id="response-txt">Write your BIFF response here...</textarea>
-                    <hr>
-                    <label for="receivedMessage-txt">
-                        <b>Received Message</b>
-                    </label>
-                    <textarea form="new-post-form" rows="10" id="receivedMessage-txt">Paste the message that you received here for reference as you write.</textarea>
-                    <button class="save">Save</button> <button class="cancel">Cancel</button>
+                    <!-- <button class="save">Save</button> <button class="cancel">Cancel</button> -->
                 </div>
             </div>
     </main>

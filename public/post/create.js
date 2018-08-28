@@ -13,7 +13,8 @@ function onCreateSubmit(event) {
   const newPost = {
     title: $("#title-txt").val(),
     response: $("#response-txt").val(),
-    receivedMessage: $("#receivedMessage-txt").val()
+    receivedMessage: $("#receivedMessage-txt").val(),
+    userId: userId
   };
 
   // see public/utils.js
@@ -22,7 +23,6 @@ function onCreateSubmit(event) {
     url: "/api/post",
     data: newPost,
     jwtToken: jwtToken,
-    userId: userId,
     callback: post => {
       $(".form-container").html(
         `<p class="center"><b>"${newPost.title}"</b> successfully saved.</p>`
@@ -36,7 +36,7 @@ function onCreateSubmit(event) {
 
 function logoutUser(event) {
   localStorage.removeItem("jwtToken");
-  window.open("./login.html", "_self");
+  window.open("../login.html", "_self");
 }
 
 function checkAuthentication() {
