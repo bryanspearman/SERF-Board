@@ -23,7 +23,7 @@ function onSignUpSubmit(event) {
       $(".form-container").html(
         `<p class="center">User <b>"${
           user.username
-        }"</b> successfully created. You may now log in.</p> <p class="center"><a href="login.html" target='_self'><button>Login</button></a></p>`
+        }"</b> successfully created. You may now log in.</p> <p class="center"><a href="login.html" target='_self'><button>Proceed to Login</button></a></p>`
       );
     }
   });
