@@ -5,6 +5,7 @@ $(document).ready(onReady);
 function onReady() {
   checkAuthentication();
   $("#new-post-form").on("submit", onCreateSubmit);
+  $(".logout").click(logoutUser);
 }
 
 function onCreateSubmit(event) {
@@ -31,6 +32,11 @@ function onCreateSubmit(event) {
       }, 1000);
     }
   });
+}
+
+function logoutUser(event) {
+  localStorage.removeItem("jwtToken");
+  window.open("./login.html", "_self");
 }
 
 function checkAuthentication() {

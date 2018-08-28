@@ -249,6 +249,16 @@ main {
     text-align: center;
   }
 
+  .list a {
+    text-decoration: none;
+    color: #4c9794;
+  }
+
+  .list a:hover {
+    text-decoration: underline;
+    color: #333;
+  }
+
   .post-summary {
     display: block;
     margin: 0px;
