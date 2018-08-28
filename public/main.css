@@ -185,7 +185,7 @@ main {
 
   input[type="submit"] {
     background: #f2ebe2;
-    width: 60%;
+    width: 45%;
     height: 40px;
     border: none;
     padding: 5px;
@@ -197,6 +197,11 @@ main {
   input[type="submit"]:focus {
     background: #ddcdbb;
     outline: none;
+    margin-right: 5px;
+  }
+
+  .cancel {
+    background: #ad4a4a;
   }
 
   hr {
@@ -212,10 +217,10 @@ main {
     background-color: #f2ebe2;
     height: 40px;
     padding: 5px;
-    margin: 5px auto;
+    margin: 5px 10px 5px 0px;
     border: none;
     cursor: pointer;
-    width: 40%;
+    width: 45%;
     font-size: 14px;
   }
 
@@ -261,6 +266,14 @@ main {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: -5px;
+  }
+
+  .edits header {
+    padding: 20px 20px 10px 20px;
+    margin: 0px;
+    height: 46px;
+    display: block;
+    text-align: center;
   }
 
   footer {
