@@ -276,6 +276,11 @@ main {
     text-align: center;
   }
 
+  .uname {
+    font-weight: bold;
+    color: #4c9794;
+  }
+
   footer {
     padding: 30px;
     font-size: 11px;
