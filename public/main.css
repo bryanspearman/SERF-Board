@@ -51,6 +51,7 @@ body {
 
 main {
   font-size: 14px;
+  line-height: 1.5em;
 }
 
 .nav {
@@ -123,10 +124,9 @@ main {
   }
 
   .nav header {
-    background: #ddcdbb;
+    background: #c6c0b6;
     padding: 20px 20px 10px 20px;
     margin: 0px;
-    height: 50px;
     display: block;
     text-align: center;
   }
@@ -169,6 +169,7 @@ main {
 
   textarea {
     width: 90%;
+    color: #555;
     padding: 15px;
     margin: 5px 0px 22px 0;
     display: block;
@@ -276,9 +277,43 @@ main {
     text-align: center;
   }
 
+  .guide p {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .guide h3 {
+    display: block;
+    color: #fff;
+    background: #4c9794;
+    padding: 15px;
+  }
+
+  .guide h4 {
+    color: #000;
+    font-weight: bolder;
+    padding: 10px 0px 10px 15px;
+  }
+
+  .guide ol {
+    padding: 10px 20px 20px 20px;
+  }
+
+  .guide ol li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
   .uname {
     font-weight: bold;
     color: #4c9794;
+  }
+
+  .biff {
+    color: #fff;
+    font-weight: bolder;
+    padding: 0px 4px;
+    margin-right: 1px;
+    background: darkred;
   }
 
   footer {

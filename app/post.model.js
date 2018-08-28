@@ -1,8 +1,8 @@
 "use strict";
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const postSchema = mongoose.Schema({
-  userId: { type: String, required: true },
+  userId: { type: String },
   title: { type: String, required: true },
   response: { type: String, required: true },
   receivedMessage: { type: String },
@@ -20,5 +20,5 @@ postSchema.methods.serialize = function() {
   };
 };
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model("Post", postSchema);
 module.exports = { Post };

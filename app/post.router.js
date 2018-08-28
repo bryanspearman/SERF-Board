@@ -30,7 +30,8 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
   Post.create({
     title: request.body.title,
     response: request.body.response,
-    receivedMessage: request.body.receivedMessage
+    receivedMessage: request.body.receivedMessage,
+    userId: request.user.userId
   })
     .then(post => {
       logSuccess("New response document created");

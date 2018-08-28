@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const UserSchema = mongoose.Schema({
+  userId: { type: String },
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   name: { type: String, default: "" }
