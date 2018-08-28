@@ -157,6 +157,7 @@ nav {
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
+    box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
     -webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
     -webkit-text-fill-color: #333333 !important;
   }
@@ -333,6 +334,14 @@ nav {
   .guide ol li {
     margin-left: 15px;
     margin-bottom: 10px;
+  }
+
+  .successMsg {
+    padding: 30px;
+    background: #58974c;
+    color: #fff;
+    font-size: 16px;
+    line-height: 2em;
   }
 
   .uname {

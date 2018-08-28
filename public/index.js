@@ -72,7 +72,7 @@ function checkAuthentication() {
   if (jwtToken) {
     username = localStorage.getItem("username");
     $(".welcome")
-      .html(`<p>Welcome <span class="uname">${username}</span></p>`)
+      .html(`<p>Welcome <span class="uname">${username}</span>!</p>`)
       .removeAttr("hidden");
   } else {
     window.open("./login.html", "_self");

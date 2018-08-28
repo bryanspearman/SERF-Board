@@ -13,8 +13,7 @@ function onCreateSubmit(event) {
   const newPost = {
     title: $("#title-txt").val(),
     response: $("#response-txt").val(),
-    receivedMessage: $("#receivedMessage-txt").val(),
-    userId: userId
+    receivedMessage: $("#receivedMessage-txt").val()
   };
 
   // see public/utils.js
@@ -25,11 +24,14 @@ function onCreateSubmit(event) {
     jwtToken: jwtToken,
     callback: post => {
       $(".form-container").html(
-        `<p class="center"><b>"${newPost.title}"</b> successfully saved.</p>`
+        `<div class="successMsg center"><p><b>"${
+          newPost.title
+        }"</b> successfully saved.<br />
+        One moment please...</p></div>`
       );
       setTimeout(function() {
         window.open(`/post/details.html?id=${post.id}`, "_self");
-      }, 1000);
+      }, 4000);
     }
   });
 }
@@ -44,7 +46,7 @@ function checkAuthentication() {
   if (jwtToken) {
     username = localStorage.getItem("username");
     $(".welcome")
-      .html(`<p>Welcome <span class="uname">${username}</span></p>`)
+      .html(`<p>Welcome <span class="uname">${username}</span>!</p>`)
       .removeAttr("hidden");
   } else {
     window.open("./login.html", "_self");
