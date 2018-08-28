@@ -1,6 +1,6 @@
 $(document).ready(onReady);
 
-let Name, jwtToken;
+let name, jwtToken;
 
 function onReady() {
   checkAuthentication();
@@ -64,9 +64,9 @@ function onPostDeleteBtnClick(event) {
 function checkAuthentication() {
   jwtToken = localStorage.getItem("jwtToken");
   if (jwtToken) {
-    Name = localStorage.getItem("name");
+    let name = localStorage.getItem("name");
     $(".welcome")
-      .html(`<p>Welcome ${Name}</p>`)
+      .html(`<p>Welcome ${name}</p>`)
       .removeAttr("hidden");
   } else {
     window.open("./login.html", "_self");
