@@ -64,7 +64,7 @@ function onPostDeleteBtnClick(event) {
 function checkAuthentication() {
   jwtToken = localStorage.getItem("jwtToken");
   if (jwtToken) {
-    let name = localStorage.getItem("name");
+    name = localStorage.getItem("name");
     $(".welcome")
       .html(`<p>Welcome ${name}</p>`)
       .removeAttr("hidden");

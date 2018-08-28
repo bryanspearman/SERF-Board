@@ -96,10 +96,6 @@ userRouter.post("/", (request, response) => {
         .json({ error: "Internal server error" });
     });
 });
-userRouter.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/");
-});
 
 module.exports = { userRouter };
 
