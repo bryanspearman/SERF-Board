@@ -3,7 +3,6 @@ $(document).ready(onReady);
 function onReady() {
   $("#sign-up-form").submit(onSignUpSubmit);
   $("#login-form").submit(onLoginSubmit);
-  $(".logout").click(userLogout);
 }
 
 function onSignUpSubmit(event) {
@@ -48,13 +47,6 @@ function onLoginSubmit(event) {
       localStorage.setItem("jwtToken", response.authToken);
       window.open("./dashboard.html", "_self");
     }
-  });
-}
-
-function userLogout() {
-  ajax({
-    method: "GET",
-    url: "/api/user/logout"
   });
 }
 

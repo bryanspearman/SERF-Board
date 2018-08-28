@@ -29,11 +29,6 @@ userRouter.post("/refresh", jwtPassportMiddleware, (request, response) => {
   response.json({ authToken });
 });
 
-userRouter.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/");
-});
-
 userRouter.post("/", (request, response) => {
   // Checks for required fields inside request body. If any are missing, responds with an error.
   const fieldsNotFound = checkObjectProperties(
@@ -100,6 +95,10 @@ userRouter.post("/", (request, response) => {
         .status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR)
         .json({ error: "Internal server error" });
     });
+});
+userRouter.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
 });
 
 module.exports = { userRouter };
