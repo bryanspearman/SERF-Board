@@ -38,7 +38,8 @@ function onCreateSubmit(event) {
 
 function logoutUser(event) {
   localStorage.removeItem("jwtToken");
-  window.open("../login.html", "_self");
+  localStorage.removeItem("username");
+  window.open("./login.html", "_self");
 }
 
 function checkAuthentication() {

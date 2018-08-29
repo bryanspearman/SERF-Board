@@ -51,5 +51,6 @@ function onLoginSubmit(event) {
 
 function logoutUser(event) {
   localStorage.removeItem("jwtToken");
+  localStorage.removeItem("username");
   window.open("./login.html", "_self");
 }

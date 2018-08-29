@@ -3,24 +3,25 @@ let postID, username, jwtToken;
 $(document).ready(onReady);
 
 function onReady() {
-	checkAuthentication();
-	$('#post-details').on('click', '#edit-post-btn', onEditPostBtnClick);
-	$.getJSON('/api/post', getPostDetails);
+  checkAuthentication();
+  $("#post-details").on("click", "#edit-post-btn", onEditPostBtnClick);
+  $.getJSON("/api/post", getPostDetails);
+  $(".logout").click(logoutUser);
 }
 
 function getPostDetails(posts) {
-	// see public/utils.js
-	postID = getQueryStringParam('id');
-	const postToRender = posts.find(post => post.id == postID);
-	renderPost(postToRender);
+  // see public/utils.js
+  postID = getQueryStringParam("id");
+  const postToRender = posts.find(post => post.id == postID);
+  renderPost(postToRender);
 }
 
 function renderPost(post) {
-	let editButton = '';
-	if (post.author === username) {
-		editButton = '<br><button id="edit-post-btn">Edit Post</button>';
-	}
-	$('#post-details').html(`
+  let editButton = "";
+  if (post.author === username) {
+    editButton = '<br><button id="edit-post-btn">Edit Post</button>';
+  }
+  $("#post-details").html(`
 		${editButton}
 		<h1>${post.title}</h1>
 		<h4>${post.author} | ${new Date(post.created).toLocaleString()}</h4>
@@ -29,13 +30,19 @@ function renderPost(post) {
 }
 
 function onEditPostBtnClick(event) {
-	event.preventDefault();
-	window.open(`/post/edit.html?id=${postID}`, '_self');
+  event.preventDefault();
+  window.open(`/post/edit.html?id=${postID}`, "_self");
+}
+
+function logoutUser(event) {
+  localStorage.removeItem("jwtToken");
+  localStorage.removeItem("username");
+  window.open("./login.html", "_self");
 }
 
 function checkAuthentication() {
-	jwtToken = localStorage.getItem('jwtToken');
-	if (jwtToken) {
-		username = localStorage.getItem('username');
-	}
+  jwtToken = localStorage.getItem("jwtToken");
+  if (jwtToken) {
+    username = localStorage.getItem("username");
+  }
 }

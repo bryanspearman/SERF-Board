@@ -4,6 +4,7 @@ const postsRouter = express.Router();
 
 const { logInfo, logError, logSuccess, logWarn } = require("./logger.js");
 const { Post } = require("./post.model.js");
+const { User } = require("./user.model.js");
 const { HTTP_STATUS_CODES } = require("./config.js");
 const { filterObject, checkObjectProperties } = require("./helpers.js");
 
@@ -28,7 +29,7 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 
   logInfo("Creating your response document ...");
   Post.create({
-    user: user._id,
+    user: request.user._id,
     title: request.body.title,
     response: request.body.response,
     receivedMessage: request.body.receivedMessage
@@ -48,8 +49,9 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 // ### Read ###
 postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
   logInfo("Fetching previous responses ...");
-  Post.find({ user: request.user._id })
+  Post.find()
     .then(posts => {
+      User.findById(request.user._id);
       logSuccess("Response collection fetched succesfully");
       response.json(posts.map(post => post.serialize()));
     })

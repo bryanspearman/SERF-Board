@@ -17,7 +17,7 @@ function renderPosts(posts) {
 function postToHtml(post) {
   let deleteButton = "";
   let editButton = "";
-  if (post.userId === req.user.userId) {
+  if (post.user === request.user._id) {
     deleteButton = '<button class="delete-post-btn">Delete</button>';
     editButton = '<button class="edit-btn">Edit</button>';
   }
@@ -64,6 +64,7 @@ function onPostDeleteBtnClick(event) {
 
 function logoutUser(event) {
   localStorage.removeItem("jwtToken");
+  localStorage.removeItem("username");
   window.open("./login.html", "_self");
 }
 
