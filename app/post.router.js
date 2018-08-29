@@ -28,10 +28,10 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 
   logInfo("Creating your response document ...");
   Post.create({
+    user: user._id,
     title: request.body.title,
     response: request.body.response,
-    receivedMessage: request.body.receivedMessage,
-    userId: request.user.userId
+    receivedMessage: request.body.receivedMessage
   })
     .then(post => {
       logSuccess("New response document created");
@@ -48,7 +48,7 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 // ### Read ###
 postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
   logInfo("Fetching previous responses ...");
-  Post.find({ userId: request.user.id })
+  Post.find({ user: request.user._id })
     .then(posts => {
       logSuccess("Response collection fetched succesfully");
       response.json(posts.map(post => post.serialize()));

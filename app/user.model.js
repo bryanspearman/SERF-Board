@@ -5,15 +5,16 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const UserSchema = mongoose.Schema({
-  userId: { type: String },
+  _id: Schema.Types.ObjectId,
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  name: { type: String, default: "" }
+  name: { type: String, default: "" },
+  posts: [{ type: Schema.Types.ObjectId, ref: "Post" }]
 });
 
 UserSchema.methods.serialize = function() {
   return {
-    userId: this.userId,
+    _id: this._id,
     username: this.username || "",
     name: this.name || ""
   };

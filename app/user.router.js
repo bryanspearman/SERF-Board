@@ -76,6 +76,7 @@ userRouter.post("/", (request, response) => {
     .then(hash => {
       // Step 3: Create user using hashed password
       return User.create({
+        _id: new mongoose.Types.ObjectId(),
         username: newUser.username,
         password: hash,
         name: newUser.name
