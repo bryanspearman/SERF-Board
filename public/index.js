@@ -4,10 +4,25 @@ let username, jwtToken;
 
 function onReady() {
   checkAuthentication();
-  $.getJSON("api/post", renderPosts);
+  getCorrectPosts();
+  // $.getJSON("api/post", renderPosts);
   $(".responses").on("click", ".delete-post-btn", onPostDeleteBtnClick);
   $(".responses").on("click", ".edit-btn", onPostClick);
   $(".logout").click(logoutUser);
+}
+
+function getCorrectPosts(posts) {
+  jwtToken = localStorage.getItem("jwtToken");
+
+  ajax({
+    method: "GET",
+    url: "/api/post",
+    data: posts,
+    jwtToken: jwtToken,
+    callback: post => {
+      renderPosts(post);
+    }
+  });
 }
 
 function renderPosts(posts) {
@@ -62,10 +77,10 @@ function onPostDeleteBtnClick(event) {
   }
 }
 
-function logoutUser(event) {
+function logoutUser() {
   localStorage.removeItem("jwtToken");
   localStorage.removeItem("username");
-  window.open("./login.html", "_self");
+  window.open("/login.html", "_self");
 }
 
 function checkAuthentication() {
@@ -76,6 +91,6 @@ function checkAuthentication() {
       .html(`<p>Welcome <span class="uname">${username}</span>!</p>`)
       .removeAttr("hidden");
   } else {
-    window.open("./login.html", "_self");
+    window.open("/login.html", "_self");
   }
 }

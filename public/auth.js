@@ -1,6 +1,7 @@
 $(document).ready(onReady);
 
 function onReady() {
+  localStorage.removeItem("jwtToken");
   $("#sign-up-form").submit(onSignUpSubmit);
   $("#login-form").submit(onLoginSubmit);
   $(".logout").click(logoutUser);
@@ -44,7 +45,7 @@ function onLoginSubmit(event) {
     callback: response => {
       localStorage.setItem("username", userData.username);
       localStorage.setItem("jwtToken", response.authToken);
-      window.open("./dashboard.html", "_self");
+      window.open("/dashboard.html", "_self");
     }
   });
 }
@@ -52,5 +53,5 @@ function onLoginSubmit(event) {
 function logoutUser(event) {
   localStorage.removeItem("jwtToken");
   localStorage.removeItem("username");
-  window.open("./login.html", "_self");
+  window.open("/login.html", "_self");
 }

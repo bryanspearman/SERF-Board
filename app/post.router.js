@@ -49,9 +49,9 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 // ### Read ###
 postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
   logInfo("Fetching previous responses ...");
-  Post.find()
+  const correctUser = User.findById(request.user._id)
     .then(posts => {
-      User.findById(request.user._id);
+      Post.find(correctUser.posts);
       logSuccess("Response collection fetched succesfully");
       response.json(posts.map(post => post.serialize()));
     })

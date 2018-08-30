@@ -36,10 +36,10 @@ function onCreateSubmit(event) {
   });
 }
 
-function logoutUser(event) {
+function logoutUser() {
   localStorage.removeItem("jwtToken");
   localStorage.removeItem("username");
-  window.open("./login.html", "_self");
+  window.open("/login.html", "_self");
 }
 
 function checkAuthentication() {
