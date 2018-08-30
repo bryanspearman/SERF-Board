@@ -30,7 +30,7 @@ function onCreateSubmit(event) {
         One moment please...</p></div>`
       );
       setTimeout(function() {
-        window.open(`/post/details.html?id=${post.id}`, "_self");
+        window.open("/dashboard.html", "_self");
       }, 4000);
     }
   });

@@ -130,7 +130,6 @@ nav {
   nav header {
     background: #c6c0b6;
     padding: 20px;
-    margin-top: -10px;
     display: block;
     text-align: center;
   }
@@ -253,6 +252,38 @@ nav {
 
   button:hover {
     background-color: #ddcdbb;
+  }
+
+  .edit-btn {
+    background-color: #555555;
+    height: 20px;
+    padding: 5px;
+    margin: 5px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    font-size: 12px;
+    color: #ddd;
+  }
+
+  .edit-btn:hover {
+    background-color: #666666;
+  }
+
+  .delete-post-btn {
+    background-color: #555555;
+    height: 20px;
+    padding: 4px;
+    margin: 5px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    font-size: 12px;
+    color: #ddd;
+  }
+
+  .delete-post-btn:hover {
+    background-color: #666666;
   }
 
   .clearfix::after {

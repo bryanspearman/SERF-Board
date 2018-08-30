@@ -4,7 +4,6 @@ const postsRouter = express.Router();
 
 const { logInfo, logError, logSuccess, logWarn } = require("./logger.js");
 const { Post } = require("./post.model.js");
-const { User } = require("./user.model.js");
 const { HTTP_STATUS_CODES } = require("./config.js");
 const { filterObject, checkObjectProperties } = require("./helpers.js");
 
@@ -47,11 +46,10 @@ postsRouter.post("/", jwtPassportMiddleware, (request, response) => {
 });
 
 // ### Read ###
-postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
+postsRouter.get("/", (request, response) => {
   logInfo("Fetching previous responses ...");
-  const correctUser = User.findById(request.user._id)
+  Post.find()
     .then(posts => {
-      Post.find(correctUser.posts);
       logSuccess("Response collection fetched succesfully");
       response.json(posts.map(post => post.serialize()));
     })
@@ -64,7 +62,7 @@ postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
 });
 
 // ### Update ###
-postsRouter.put("/:id", jwtPassportMiddleware, (request, response) => {
+postsRouter.put("/:id", (request, response) => {
   // Checks for required fields inside request body. If any are missing, responds with an error.
   const fieldsNotFound = checkObjectProperties(
     ["title", "response"],
@@ -104,7 +102,7 @@ postsRouter.put("/:id", jwtPassportMiddleware, (request, response) => {
 });
 
 // ### Delete ###
-postsRouter.delete("/:id", jwtPassportMiddleware, (request, response) => {
+postsRouter.delete("/:id", (request, response) => {
   logInfo("Deleting response document ...");
   Post.findByIdAndRemove(request.params.id)
     .then(() => {

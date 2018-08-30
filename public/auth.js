@@ -1,7 +1,6 @@
 $(document).ready(onReady);
 
 function onReady() {
-  localStorage.removeItem("jwtToken");
   $("#sign-up-form").submit(onSignUpSubmit);
   $("#login-form").submit(onLoginSubmit);
   $(".logout").click(logoutUser);
@@ -50,7 +49,7 @@ function onLoginSubmit(event) {
   });
 }
 
-function logoutUser(event) {
+function logoutUser() {
   localStorage.removeItem("jwtToken");
   localStorage.removeItem("username");
   window.open("/login.html", "_self");

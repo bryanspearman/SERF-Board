@@ -1,16 +1,13 @@
 "use strict";
 const mongoose = require("mongoose");
 
-const postSchema = mongoose.Schema(
-  {
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    title: { type: String, required: true },
-    response: { type: String, required: true },
-    receivedMessage: { type: String }
-    // created: { type: Date, default: Date.now }
-  },
-  { timestamps: {} }
-);
+const postSchema = mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  title: { type: String, required: true },
+  response: { type: String, required: true },
+  receivedMessage: { type: String },
+  created: { type: Date, default: Date.now }
+});
 
 postSchema.methods.serialize = function() {
   return {
@@ -19,7 +16,7 @@ postSchema.methods.serialize = function() {
     title: this.title,
     response: this.response,
     receivedMessage: this.receivedMessage,
-    timestamps: this.timestamps
+    created: this.created
   };
 };
 

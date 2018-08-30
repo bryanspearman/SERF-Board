@@ -4,55 +4,40 @@ let username, jwtToken;
 
 function onReady() {
   checkAuthentication();
-  getCorrectPosts();
-  // $.getJSON("api/post", renderPosts);
+  $.getJSON("api/post", renderPosts).fail(showErr);
   $(".responses").on("click", ".delete-post-btn", onPostDeleteBtnClick);
   $(".responses").on("click", ".edit-btn", onPostClick);
   $(".logout").click(logoutUser);
 }
 
-function getCorrectPosts(posts) {
-  jwtToken = localStorage.getItem("jwtToken");
-
-  ajax({
-    method: "GET",
-    url: "/api/post",
-    data: posts,
-    jwtToken: jwtToken,
-    callback: post => {
-      renderPosts(post);
-    }
-  });
-}
-
+// Handle displaying posts ///////////////////////////////////////////////
 function renderPosts(posts) {
-  $(".responses").html(posts.map(postToHtml));
+  const results = posts.map(postToHtml);
+  $(".responses").html(results);
 }
 
 function postToHtml(post) {
-  let deleteButton = "";
-  let editButton = "";
-  if (post.user === request.user._id) {
-    deleteButton = '<button class="delete-post-btn">Delete</button>';
-    editButton = '<button class="edit-btn">Edit</button>';
-  }
   return `
   	<div class="post-summary" data-post-id="${post.id}">
 			<h2>${post.title}</h2>
-			<p>${post.response}</p>
 			<p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
-			${editButton} ${deleteButton}
+			<button class="edit-btn">Edit</button> <button class="delete-post-btn">Delete</button>
 	</div>
     `;
 }
 
-// Handle editing
+function showErr(err) {
+  const errMsg = '<p class="errMsg">😔 Sorry, something went wrong</p>';
+  $(".responses").html(errMsg);
+}
+
+// Handle editing /////////////////////////////////////////////////////////
 function onPostClick(event) {
   const postId = $(event.currentTarget).attr("data-post-id");
   window.open(`post/details.html?id=${postId}`, "_self");
 }
 
-// Handle deleting
+// Handle deleting ///////////////////////////////////////////////////////
 function onPostDeleteBtnClick(event) {
   event.stopImmediatePropagation();
 
@@ -66,12 +51,15 @@ function onPostDeleteBtnClick(event) {
       method: "delete",
       url: `/api/post/${postID}`,
       callback: () => {
-        $(".responses").html(
-          `<p class="center"><b>"${post.title}"</b>, successfully deleted</p>`
+        $(".edits").html(
+          `<div class="successMsg center"><p><b>"${
+            post.title
+          }"</b> successfully deleted.<br />
+        One moment please...</p></div>`
         );
         setTimeout(function() {
           $.getJSON("api/post", renderPosts);
-        }, 1000);
+        }, 3000);
       }
     });
   }
