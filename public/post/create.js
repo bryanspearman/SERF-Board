@@ -4,6 +4,7 @@ $(document).ready(onReady);
 
 function onReady() {
   checkAuthentication();
+  accordion();
   $("#new-post-form").on("submit", onCreateSubmit);
   $(".logout").click(logoutUser);
 }
@@ -16,7 +17,6 @@ function onCreateSubmit(event) {
     receivedMessage: $("#receivedMessage-txt").val()
   };
 
-  // see public/utils.js
   ajax({
     method: "POST",
     url: "/api/post",
@@ -36,6 +36,21 @@ function onCreateSubmit(event) {
       }, 3000);
     }
   });
+}
+
+function accordion() {
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
 }
 
 function logoutUser() {
