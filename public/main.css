@@ -81,6 +81,7 @@ nav {
     background-color: #fcf6ec;
     margin: 0px;
     padding: 0px;
+    vertical-align: top;
   }
   .edits {
     display: table-cell;
@@ -88,6 +89,7 @@ nav {
     background-color: #fff;
     margin: 0px;
     padding: 0px;
+    vertical-align: top;
   }
 
   h2 {
@@ -128,8 +130,24 @@ nav {
   }
 
   nav header {
-    background: #c6c0b6;
+    background: #ffffff;
     padding: 20px;
+    display: block;
+    text-align: center;
+  }
+
+  .list header {
+    background-color: #fcf6ec;
+    padding: 20px;
+    margin: 0px;
+    /* display: block; */
+    text-align: center;
+  }
+
+  .edits header {
+    padding: 20px;
+    margin: 0px;
+    background: #f1f1f1;
     display: block;
     text-align: center;
   }
@@ -307,14 +325,6 @@ nav {
     color: #333;
   }
 
-  .list header {
-    background-color: #fcf6ec;
-    padding: 20px;
-    margin: 0px;
-    display: block;
-    text-align: center;
-  }
-
   .list a {
     text-decoration: none;
     color: #4c9794;
@@ -337,14 +347,6 @@ nav {
 
   .post-summary:nth-child(odd) {
     background-color: #e0dad0;
-  }
-
-  .edits header {
-    padding: 20px;
-    margin: 0px;
-    background: #f1f1f1;
-    display: block;
-    text-align: center;
   }
 
   .guide {
@@ -405,6 +407,28 @@ nav {
 
   .noSave {
     float: left;
+  }
+
+  .hello {
+    padding: 50px;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .hello p {
+    padding: 20px 0px;
+    font-size: 1.5em;
+  }
+
+  .hello ul {
+    list-style: none;
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+  }
+
+  .hello h2 {
+    margin-top: 20px;
   }
 
   footer {
