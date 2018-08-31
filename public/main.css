@@ -175,7 +175,8 @@ nav {
 
   input[type="text"]:focus,
   input[type="password"]:focus {
-    background-color: #ddd;
+    background-color: #f0f0f0;
+    border: solid 1px #c0c0c0;
     outline: none;
   }
 
@@ -192,7 +193,8 @@ nav {
   }
 
   textarea:focus {
-    background-color: #ddd;
+    background-color: #f0f0f0;
+    border: solid 1px #c0c0c0;
     outline: none;
     content: "";
   }
@@ -252,6 +254,7 @@ nav {
 
   button:hover {
     background-color: #ddcdbb;
+    outline: none;
   }
 
   .edit-btn {
@@ -268,6 +271,7 @@ nav {
 
   .edit-btn:hover {
     background-color: #666666;
+    outline: none;
   }
 
   .delete-post-btn {
@@ -284,6 +288,7 @@ nav {
 
   .delete-post-btn:hover {
     background-color: #666666;
+    outline: none;
   }
 
   .clearfix::after {
@@ -295,6 +300,11 @@ nav {
   .form-container {
     background: #fff;
     padding: 20px;
+  }
+
+  .form-container a {
+    text-decoration: none;
+    color: #333;
   }
 
   .list header {
@@ -386,6 +396,15 @@ nav {
     padding: 0px 4px;
     margin-right: 1px;
     background: darkred;
+  }
+
+  .req {
+    color: red;
+    font-size: 10px;
+  }
+
+  .noSave {
+    float: left;
   }
 
   footer {

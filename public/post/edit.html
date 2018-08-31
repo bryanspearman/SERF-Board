@@ -1,37 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Posts | Edit</title>
+    <meta name="description" content="S.E.R.F. Board - Script. Effective. Responses. Fast.">
+    <meta name="author" content="Anne and Bryan Spearman">
+    <meta name="keywords" content="high conflict, custody battle, B.I.F.F.&reg; Assistant">
+    <link rel=" stylesheet " href="/main.css ">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Yantramanav " rel="stylesheet ">
+    <title>S.E.R.F. Board | Edit</title>
 </head>
+
 <body>
-    <a href="/">Back to Home</a>
-    <h1>Editing Post</h1>
-    <form id="post-edit-form">
-        <label for="author-txt">
-            Author:
-            <br><input id="author-txt" type="text" disabled required> 
-        </label>
-        <br>
-        <label for="title-txt">
-            Title:
-            <br><input id="title-txt" type="text" size="50" disabled required> 
-        </label>
-        <br>
-        <label for="content-txt">
-            Content:
-            <br><textarea id="content-txt" form="new-post-form" cols="50" disabled required></textarea> 
-        </label>
-        <br>
-        <input type="submit" value="Save Changes">
-    </form>
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    <main role="main">
+        <div class="row">
+            <nav role="navigation" class="nav">
+                <header role="banner">
+                    <h1>Resolve Counseling</h1>
+                    <p><strong>SERF</strong> Board</p>
+                </header>
+                <div class="welcome center" hidden></div>
+                <ul>
+                    <li><i class="fas fa-caret-right"></i> <a href="/dashboard.html" target="_self" class="selected">DashBoard</a></li>
+                    <li><a href="/post/create.html" target="_self">Create Response</a></li>
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </nav>
+
+
+
+            <div class="list">
+                <header role="banner">
+                    <h2>BIFF Assistant</h2>
+                </header>
+                <div class="guide">
+                    <p>
+                        According to Bill Eddy of the <a href="http://www.highconflictinsitute.com" target="_blank">High
+                            Conflict Institute
+                        </a>, there is a simple strategy for responding to communication from high conflict people. This
+                        method is called the BIFF Response Method and more information can be found at his website: <a href="http://www.highconflictinsitute.com"
+                            target="_blank">www.highconflictinsitute.com</a>.
+                    </p>
+                    <h3>Does this require a response?</h3>
+                    <h4>Guidance for deciding this</h4>
+                    <ol>
+                        <li>
+                            Stop. Walk away from it and give yourself time to think.
+                        </li>
+                        <li>
+                            Then return to the communication and reread it.
+                        </li>
+                        <li>
+                            Is there a request, question, deadline, an appointment, or an important decision?<br /> If the
+                            answer is NO: then don’t respond.<br /> If the answer is YES...
+                        </li>
+                    </ol>
+                    <h3>What are the relevant issues?</h3>
+                    <h4>Guidance for deciding this</h4>
+                    <ol>
+                        <li>
+                            <strong>Identify the relevant issue(s)</strong><br /> Relevant issues are appropriate, pertinent
+                            topics or problems for discussion.
+                        </li>
+                        <li>
+                            <strong>Stay out of the weeds</strong><br /> Weeds are comments/statements/issues that will only
+                            result in increased conflict if you respond to them.
+                        </li>
+                        <h4>Examples:</h4>
+                        <ol>
+                            <li>
+                                Intensely emotional statements that are out of proportion to the topic.
+                            </li>
+                            <li>
+                                When there is no real issue being discussed.
+                            </li>
+                            <li>
+                                The other person’s opinions about your behavior, character or choices.
+                            </li>
+                            <li>
+                                When the you know you aren’t going to change the other person’s point of view or perspective.
+                            </li>
+                            <li>
+                                When you have already provided an adequate response to the issue previously.
+                            </li>
+                        </ol>
+                    </ol>
+                    <h3>BIFF Response check:</h3>
+                    <ol>
+                        <li>
+                            Is it <span class="biff">B</span>rief?<br /> 2-5 sentences.
+                        </li>
+                        <li>
+                            It is <span class="biff">I</span>nformative? <br /> A sentence or two with straight forward,
+                            useful information about the relevant issue or subject at hand.
+                        </li>
+                        <li>
+                            Is it <span class="biff">F</span>riendly? <br /> A polite statement at the beginning or end of
+                            the communication (ex, thanks for your response, or enjoy your weekend with the kids).
+                        </li>
+                        <li>
+                            Is it <span class="biff">F</span>irm?<br /> Does your response end the discussion? Consider giving
+                            the person two choices, a reply deadline or other statement that gives the other person nothing
+                            to respond to.
+                        </li>
+                    </ol>
+                    <p>
+                        For more information about this method please see: <cite><a href="https://www.highconflictinstitute.com/bookstores/biff"
+                                target="_blank"><strong>BIFF: Quick Responses to High-Conflict People, Their Personal Attacks,
+                                    Hostile Email and Social Media Meltdowns</strong></a></cite> -Bill Eddy, LCSW, Esq.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="edits">
+                <header role="banner">
+                    <h2>Your SERF Board</h2>
+                </header>
+                <div class="form-container">
+                    <form action="#" id="post-edit-form">
+                        <label for="title-text">
+                            <b>Title</b> <span class="req">*</span>
+                        </label>
+                        <input type="text" id="title-txt" required>
+
+                        <label for="response-txt">
+                            <b>Your BIFF Response</b> <span class="req">*</span>
+                        </label>
+                        <textarea form="post-edit-form" rows="15" id="response-txt"></textarea>
+                        <hr>
+                        <label for="receivedMessage-txt">
+                            <b>Received Message</b>
+                        </label>
+                        <textarea form="post-edit-form" rows="15" id="receivedMessage-txt"></textarea>
+
+                        <div class="clearfix">
+                            <input type="submit" value="Save Changes">
+                        </div>
+                    </form>
+                    <button class="noSave"><a href="/dashboard.html" target="_self"><strong>Don't Save </strong></a></button>
+                </div>
+            </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy;Copyright 2018 <a href="http://www.resolvecounselingsc.com" target="_blank">Resolve Counseling</a> |
+            <a href="http://greenvillesctherapist.com/privacy-policy/" target="_blank">Privacy Policy</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="../utils.js"></script>
     <script src="./edit.js"></script>
+
 </body>
+
 </html>

@@ -24,10 +24,12 @@ function onCreateSubmit(event) {
     jwtToken: jwtToken,
     callback: post => {
       $(".form-container").html(
-        `<div class="successMsg center"><p><b>"${
-          newPost.title
-        }"</b> successfully saved.<br />
-        One moment please...</p></div>`
+        `
+        <div class="successMsg center">
+        <p>Well that was easy!<br />
+        We\'ll head back to the list now...</p>
+        </div>
+        `
       );
       setTimeout(function() {
         window.open("/dashboard.html", "_self");
@@ -47,9 +49,9 @@ function checkAuthentication() {
   if (jwtToken) {
     username = localStorage.getItem("username");
     $(".welcome")
-      .html(`<p>Welcome <span class="uname">${username}</span>!</p>`)
+      .html(`<p>Let\'s do this <span class="uname">${username}</span>!</p>`)
       .removeAttr("hidden");
   } else {
-    window.open("./login.html", "_self");
+    window.open("/login.html", "_self");
   }
 }

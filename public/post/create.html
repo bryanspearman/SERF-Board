@@ -25,7 +25,7 @@
                 </header>
                 <div class="welcome center" hidden></div>
                 <ul>
-                    <li><a href="/dashboard.html">DashBoard</a></li>
+                    <li><a href="/dashboard.html" target="_self">DashBoard</a></li>
                     <li><i class="fas fa-caret-right"></i> <a href="#" class="selected">Create Response</a></li>
                     <li><a href="#" class="logout">Logout</a></li>
                 </ul>
@@ -123,24 +123,23 @@
                 <div class="form-container">
                     <form action="#" id="new-post-form">
                         <label for="title-text">
-                            <b>Title</b>
+                            <b>Title</b> <span class="req">*</span>
                         </label>
                         <input type="text" id="title-txt" placeholder="Give your response a title" required>
 
                         <label for="response-txt">
-                            <b>Your BIFF Response</b>
+                            <b>Your BIFF Response</b> <span class="req">*</span>
                         </label>
-                        <textarea form="new-post-form" rows="15" id="response-txt">Write your BIFF response here...</textarea>
+                        <textarea form="new-post-form" rows="15" id="response-txt" placeholder="Write your BIFF response here..." required></textarea>
                         <hr>
                         <label for="receivedMessage-txt">
                             <b>Received Message</b>
                         </label>
-                        <textarea form="new-post-form" rows="15" id="receivedMessage-txt">Paste the message that you received here for reference as you write.</textarea>
+                        <textarea form="new-post-form" rows="15" id="receivedMessage-txt" placeholder="Paste the message that you received here for reference as you write."></textarea>
                         <div class="clearfix">
                             <input type="submit" value="Save"> <input type="reset" value="Cancel">
                         </div>
                     </form>
-                    <!-- <button class="save">Save</button> <button class="cancel">Cancel</button> -->
                 </div>
             </div>
     </main>

@@ -6,67 +6,70 @@ function onReady() {
   checkAuthentication();
   $.getJSON("/api/post", getPostDetails);
   $("#post-edit-form").on("submit", onEditSubmit);
+  $(".form-container").on("click", ".noSave", onNoSave);
   $(".logout").click(logoutUser);
 }
 
 function getPostDetails(posts) {
-  // see public/utils.js
   postID = getQueryStringParam("id");
+  console.log(postID);
   const postToRender = posts.find(post => post.id == postID);
-  if (postToRender.author === username) {
-    renderPost(postToRender);
-  } else {
-    alert("You are not the owner of this post, redirecting to homepage ...");
-    window.open("/", "_self");
-  }
+  renderPost(postToRender);
 }
 
 function renderPost(post) {
-  // Populate form fields with post data
-  $("#author-txt")
-    .prop("disabled", false)
-    .val(post.author);
-  $("#title-txt")
-    .prop("disabled", false)
-    .val(post.title);
-  $("#content-txt")
-    .prop("disabled", false)
-    .val(post.content);
+  $("#title-txt").val(post.title);
+  $("#response-txt").val(post.response);
+  $("#receivedMessage-txt").val(post.receivedMessage);
 }
 
 function onEditSubmit(event) {
   event.preventDefault();
   const newPost = {
-    author: $("#author-txt").val(),
     title: $("#title-txt").val(),
-    content: $("#content-txt").val()
+    response: $("#response-txt").val(),
+    receivedMessage: $("#receivedMessage-txt").val()
   };
 
-  // see public/utils.js
   ajax({
     method: "PUT",
     url: `/api/post/${postID}`,
     data: newPost,
     jwtToken: jwtToken,
     callback: post => {
-      alert("Post changes saved succesfully, redirecting ...");
-      window.open(`/post/details.html?id=${postID}`, "_self");
+      $(".form-container").html(
+        `<div class="successMsg center">
+        <p>Ok your edits are saved!<br />
+        We heading back to the list...</p>
+        </div>`
+      );
+      setTimeout(function() {
+        window.open("/dashboard.html", "_self");
+      }, 4000);
     }
   });
 }
 
-function logoutUser(event) {
+function onNoSave() {
+  window.open("/dashboard.html", "_self");
+}
+
+function logoutUser() {
   localStorage.removeItem("jwtToken");
   localStorage.removeItem("username");
-  window.open("./login.html", "_self");
+  window.open("/login.html", "_self");
 }
 
 function checkAuthentication() {
   jwtToken = localStorage.getItem("jwtToken");
   if (jwtToken) {
     username = localStorage.getItem("username");
+    $(".welcome")
+      .html(
+        `<p>Let\'s edit this thing <span class="uname">${username}</span>!</p>`
+      )
+      .removeAttr("hidden");
   } else {
-    alert("You are not logged in, taking you back to home page.");
-    window.open("/", "_self");
+    window.open("/login.html", "_self");
   }
 }

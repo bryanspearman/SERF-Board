@@ -5,8 +5,8 @@ let username, jwtToken;
 function onReady() {
   checkAuthentication();
   $.getJSON("api/post", renderPosts).fail(showErr);
-  $(".responses").on("click", ".delete-post-btn", onPostDeleteBtnClick);
-  $(".responses").on("click", ".edit-btn", onPostClick);
+  $(".responses").on("click", ".delete-post-btn", onPostDelete);
+  $(".responses").on("click", ".edit-btn", onPostEdit);
   $(".logout").click(logoutUser);
 }
 
@@ -32,15 +32,16 @@ function showErr(err) {
 }
 
 // Handle editing /////////////////////////////////////////////////////////
-function onPostClick(event) {
-  const postId = $(event.currentTarget).attr("data-post-id");
-  window.open(`post/details.html?id=${postId}`, "_self");
+function onPostEdit(event) {
+  const postId = $(event.currentTarget)
+    .closest(".post-summary")
+    .attr("data-post-id");
+  window.open(`post/edit.html?id=${postId}`, "_self");
 }
 
 // Handle deleting ///////////////////////////////////////////////////////
-function onPostDeleteBtnClick(event) {
+function onPostDelete(event) {
   event.stopImmediatePropagation();
-
   const postID = $(event.currentTarget)
     .closest(".post-summary")
     .attr("data-post-id");
@@ -52,13 +53,18 @@ function onPostDeleteBtnClick(event) {
       url: `/api/post/${postID}`,
       callback: () => {
         $(".edits").html(
-          `<div class="successMsg center"><p><b>"${
-            post.title
-          }"</b> successfully deleted.<br />
-        One moment please...</p></div>`
+          `<header role="banner">
+              <h2>Your SERF Board</h2>
+            </header>
+            <div class="form-container">
+              <div class="successMsg center">
+                <p>Just a second, we\'ll get this deleted.<br />
+              Stand by...</p>
+              </div>
+            </div>`
         );
         setTimeout(function() {
-          $.getJSON("api/post", renderPosts);
+          window.location.reload(true);
         }, 3000);
       }
     });
