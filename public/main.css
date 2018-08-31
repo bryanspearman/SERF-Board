@@ -40,34 +40,451 @@ body {
   min-height: 100vh;
 }
 
-/******************* Mobile defaults *********************/
-
-nav,
-.list,
-.edits {
-  display: block;
-  width: 100%;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
+  -webkit-text-fill-color: #333333 !important;
 }
 
-main {
-  font-size: 14px;
-  line-height: 1.5em;
-}
-
-nav {
-  background-color: #f2ebe2;
-}
-
-.list {
-  background-color: #fcf6ec;
-}
-
-.edits {
-  background-color: #fff;
-}
-
-/* **************  Non-mobile, grid ******************* */
+/* **************  1050px - 1400px ******************* */
 @media only screen and (min-width: 1050px) {
+  nav {
+    display: table-cell;
+    width: 20%;
+    background-color: #f2ebe2;
+    margin: 0px;
+    padding: 0px;
+  }
+  .list {
+    display: table-cell;
+    width: 30%;
+    background-color: #fcf6ec;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+  }
+  .edits {
+    display: table-cell;
+    width: 50%;
+    background-color: #fff;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  main {
+    font-size: 14px;
+  }
+
+  nav ul {
+    margin: 0px;
+    padding: 25px;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.4s;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+    color: #4c9794;
+  }
+
+  a.selected {
+    color: #4c9794;
+    text-decoration: none;
+  }
+
+  nav header {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .list header {
+    background-color: #fcf6ec;
+    padding: 20px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .edits header {
+    padding: 20px;
+    margin: 0px;
+    background: #f2ebe2;
+    text-align: center;
+  }
+
+  .landingPage {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+  }
+
+  .action_pages {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  .center {
+    text-align: center;
+    padding: 20px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0px 22px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+    position: relative;
+    font-size: 14px;
+    transition: 0.4s;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    background-color: #f0f0f0;
+    border: solid 1px #c0c0c0;
+    outline: none;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    color: #555;
+    padding: 15px 20px 15px 15px;
+    margin: 5px 0px 22px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+    position: relative;
+    font-size: 14px;
+    transition: 0.4s;
+  }
+
+  textarea:focus {
+    background-color: #f0f0f0;
+    border: solid 1px #c0c0c0;
+    outline: none;
+    content: "";
+  }
+
+  input[type="submit"] {
+    background: #4d9590;
+    width: 25%;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  input[type="submit"]:hover {
+    background: #7dcbc4;
+    outline: none;
+    color: #333;
+  }
+
+  input[type="reset"] {
+    background: #ad4a4a;
+    width: 25%;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    margin-right: 5px;
+    transition: 0.4s;
+  }
+
+  input[type="reset"]:hover {
+    background: #973737;
+    outline: none;
+  }
+
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #4d9590;
+    height: 40px;
+    padding: 5px;
+    margin: 5px 10px 5px 0px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    font-size: 14px;
+    color: #fff;
+    transition: 0.4s;
+  }
+
+  button:hover {
+    background-color: #7dcbc4;
+    outline: none;
+    color: #333;
+  }
+
+  .edit-btn {
+    background-color: #555555;
+    height: 20px;
+    padding: 5px;
+    margin: 5px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    font-size: 12px;
+    color: #ddd;
+    transition: 0.4s;
+  }
+
+  .edit-btn:hover {
+    background-color: #9b9b9b;
+    outline: none;
+  }
+
+  .delete-post-btn {
+    background-color: #555555;
+    height: 20px;
+    padding: 4px;
+    margin: 5px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    font-size: 12px;
+    color: #ddd;
+    transition: 0.4s;
+  }
+
+  .delete-post-btn:hover {
+    background-color: #9b9b9b;
+    outline: none;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .form-container {
+    background: #fff;
+    padding: 20px;
+    margin: 0px auto;
+  }
+
+  .list a {
+    text-decoration: none;
+    color: #4c9794;
+  }
+
+  .list a:hover {
+    text-decoration: underline;
+    color: #333;
+  }
+
+  .post-summary {
+    display: block;
+    margin: 0px;
+    padding: 15px;
+  }
+
+  .post-summary:nth-child(even) {
+    background-color: #c6c0b6;
+  }
+
+  .post-summary:nth-child(odd) {
+    background-color: #e0dad0;
+  }
+
+  .guide {
+    background: #fffbf5;
+  }
+
+  .guide p {
+    padding: 20px;
+  }
+
+  .accordion {
+    background-color: #4c9794;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px #fffbf5;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: #7dcbc4;
+    color: #333;
+  }
+
+  .accordion:after {
+    content: "\002B";
+    color: #fff;
+    font-weight: bold;
+    float: left;
+    margin-right: 20px;
+  }
+
+  .active:after {
+    content: "\2212";
+  }
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .panel p {
+    padding: 10px 20px;
+  }
+
+  .panel h4 {
+    color: #000;
+    font-weight: bolder;
+    padding: 10px 0px 10px 15px;
+  }
+
+  .panel ol {
+    padding: 10px 20px;
+  }
+
+  .panel ol li {
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+
+  .successMsg {
+    padding: 30px;
+    background: #58974c;
+    color: #fff;
+    font-size: 16px;
+    line-height: 2em;
+  }
+
+  .uname {
+    font-weight: bold;
+    color: #4c9794;
+  }
+
+  .biff {
+    color: #fff;
+    font-weight: bolder;
+    padding: 0px 4px;
+    margin-right: 1px;
+    background: darkred;
+  }
+
+  .req {
+    color: red;
+    font-size: 10px;
+  }
+
+  .hello {
+    padding: 30px;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .hello p {
+    padding: 20px 0px;
+    font-size: 1em;
+  }
+
+  .hello ul {
+    list-style: none;
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .hello h1 {
+    font-size: 1.5em;
+  }
+
+  .hello h2 {
+    margin-top: 20px;
+  }
+
+  footer {
+    padding: 30px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  footer a {
+    color: #333;
+  }
+
+  footer a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .divider {
+    height: 1px;
+    border-top: solid 1px #dfd8d0;
+    border-bottom: solid 1px #fcf6ec;
+    margin: 0px 20px;
+  }
+
+  .created {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .start {
+    margin-bottom: 20px;
+  }
+}
+
+/* **************  1400px + ******************* */
+@media only screen and (min-width: 1400px) {
   nav {
     display: table-cell;
     width: 15%;
@@ -166,15 +583,6 @@ nav {
   .center {
     text-align: center;
     padding: 20px;
-  }
-
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
-    -webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
-    -webkit-text-fill-color: #333333 !important;
   }
 
   input[type="text"],
