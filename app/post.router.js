@@ -62,7 +62,7 @@ postsRouter.get("/", jwtPassportMiddleware, (request, response) => {
 });
 
 // ### Update ###
-postsRouter.put("/:id", (request, response) => {
+postsRouter.put("/:id", jwtPassportMiddleware, (request, response) => {
   // Checks for required fields inside request body. If any are missing, responds with an error.
   const fieldsNotFound = checkObjectProperties(
     ["title", "response"],
@@ -102,7 +102,7 @@ postsRouter.put("/:id", (request, response) => {
 });
 
 // ### Delete ###
-postsRouter.delete("/:id", (request, response) => {
+postsRouter.delete("/:id", jwtPassportMiddleware, (request, response) => {
   logInfo("Deleting response document ...");
   Post.findByIdAndRemove(request.params.id)
     .then(() => {
