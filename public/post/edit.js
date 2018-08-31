@@ -4,7 +4,13 @@ $(document).ready(onReady);
 
 function onReady() {
   checkAuthentication();
-  $.getJSON("/api/post", getPostDetails);
+  // $.getJSON("/api/post", getPostDetails);
+  ajax({
+    type: "GET",
+    url: "/api/post",
+    jwtToken: jwtToken,
+    callback: getPostDetails
+  });
   $("#post-edit-form").on("submit", onEditSubmit);
   $(".form-container").on("click", ".noSave", onNoSave);
   $(".logout").click(logoutUser);

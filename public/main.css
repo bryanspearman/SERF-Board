@@ -67,7 +67,7 @@ nav {
 }
 
 /* **************  Non-mobile, grid ******************* */
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 1050px) {
   nav {
     display: table-cell;
     width: 15%;
@@ -147,7 +147,7 @@ nav {
   .edits header {
     padding: 20px;
     margin: 0px;
-    background: #f1f1f1;
+    background: #f2ebe2;
     display: block;
     text-align: center;
   }
@@ -181,7 +181,7 @@ nav {
 
   input[type="text"],
   input[type="password"] {
-    width: 90%;
+    width: 95%;
     padding: 15px;
     margin: 5px 0px 22px 0;
     display: block;
@@ -199,7 +199,7 @@ nav {
   }
 
   textarea {
-    width: 90%;
+    width: 95%;
     color: #555;
     padding: 15px;
     margin: 5px 0px 22px 0;
@@ -317,7 +317,8 @@ nav {
 
   .form-container {
     background: #fff;
-    padding: 20px;
+    padding: 40px 60px;
+    margin: 0px auto;
   }
 
   .form-container a {
@@ -354,7 +355,7 @@ nav {
   }
 
   .guide p {
-    padding: 10px 20px 20px 20px;
+    padding: 10px 30px 20px 30px;
   }
 
   .guide h3 {
@@ -371,7 +372,7 @@ nav {
   }
 
   .guide ol {
-    padding: 10px 20px 20px 20px;
+    padding: 10px 30px 20px 30px;
   }
 
   .guide ol li {
@@ -435,5 +436,11 @@ nav {
     padding: 30px;
     font-size: 11px;
     text-align: center;
+  }
+  .divider {
+    height: 1px;
+    border-top: solid 1px #dfd8d0;
+    border-bottom: solid 1px #fcf6ec;
+    margin: 0px 20px;
   }
 }

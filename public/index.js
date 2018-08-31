@@ -4,7 +4,12 @@ let username, jwtToken;
 
 function onReady() {
   checkAuthentication();
-  $.getJSON("api/post", renderPosts).fail(showErr);
+  ajax({
+    type: "GET",
+    url: "/api/post",
+    jwtToken: jwtToken,
+    callback: renderPosts
+  });
   $(".responses").on("click", ".delete-post-btn", onPostDelete);
   $(".responses").on("click", ".edit-btn", onPostEdit);
   $(".logout").click(logoutUser);
@@ -50,6 +55,7 @@ function onPostDelete(event) {
   if (userSaidYes) {
     ajax({
       method: "delete",
+      jwtToken: jwtToken,
       url: `/api/post/${postID}`,
       callback: () => {
         $(".edits").html(
