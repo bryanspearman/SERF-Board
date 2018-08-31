@@ -31,7 +31,7 @@ html {
   color: #333;
   margin: 0px;
   padding: 0px;
-  background-color: #c8e9e7;
+  background-color: #e6fcfa;
 }
 
 body {
@@ -181,7 +181,8 @@ nav {
 
   input[type="text"],
   input[type="password"] {
-    width: 95%;
+    box-sizing: border-box;
+    width: 100%;
     padding: 15px;
     margin: 5px 0px 22px 0;
     display: block;
@@ -199,9 +200,10 @@ nav {
   }
 
   textarea {
-    width: 95%;
+    box-sizing: border-box;
+    width: 100%;
     color: #555;
-    padding: 15px;
+    padding: 15px 20px 15px 15px;
     margin: 5px 0px 22px 0;
     display: block;
     border: none;
@@ -218,24 +220,26 @@ nav {
   }
 
   input[type="submit"] {
-    background: #f2ebe2;
-    width: 45%;
+    background: #4d9590;
+    width: 25%;
     height: 40px;
     border: none;
     padding: 5px;
     cursor: pointer;
     font-size: 14px;
     margin-right: 5px;
+    color: #fff;
   }
 
   input[type="submit"]:hover {
-    background: #ddcdbb;
+    background: #7dcbc4;
     outline: none;
+    color: #333;
   }
 
   input[type="reset"] {
     background: #ad4a4a;
-    width: 45%;
+    width: 25%;
     height: 40px;
     border: none;
     padding: 5px;
@@ -260,19 +264,21 @@ nav {
   }
 
   button {
-    background-color: #f2ebe2;
+    background-color: #4d9590;
     height: 40px;
     padding: 5px;
     margin: 5px 10px 5px 0px;
     border: none;
     cursor: pointer;
-    width: 45%;
+    width: 25%;
     font-size: 14px;
+    color: #fff;
   }
 
   button:hover {
-    background-color: #ddcdbb;
+    background-color: #7dcbc4;
     outline: none;
+    color: #333;
   }
 
   .edit-btn {
@@ -319,11 +325,6 @@ nav {
     background: #fff;
     padding: 40px 60px;
     margin: 0px auto;
-  }
-
-  .form-container a {
-    text-decoration: none;
-    color: #333;
   }
 
   .list a {
@@ -406,10 +407,6 @@ nav {
     font-size: 10px;
   }
 
-  .noSave {
-    float: left;
-  }
-
   .hello {
     padding: 50px;
     margin: 0px auto;
@@ -437,10 +434,29 @@ nav {
     font-size: 11px;
     text-align: center;
   }
+
+  footer a {
+    color: #333;
+  }
+
+  footer a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+
   .divider {
     height: 1px;
     border-top: solid 1px #dfd8d0;
     border-bottom: solid 1px #fcf6ec;
     margin: 0px 20px;
+  }
+
+  .created {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .start {
+    margin-bottom: 20px;
   }
 }

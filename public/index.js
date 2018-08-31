@@ -25,7 +25,7 @@ function postToHtml(post) {
   return `
   	<div class="post-summary" data-post-id="${post.id}">
 			<h2>${post.title}</h2>
-			<p><b>Created:</b> ${new Date(post.created).toLocaleString()}</p>
+			<p class="created">Created: ${new Date(post.created).toLocaleString()}</p>
 			<button class="edit-btn">Edit</button> <button class="delete-post-btn">Delete</button>
 	</div>
     `;
