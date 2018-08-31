@@ -26,14 +26,14 @@ function onCreateSubmit(event) {
       $(".form-container").html(
         `
         <div class="successMsg center">
-        <p>Well that was easy!<br />
-        We\'ll head back to the list now...</p>
+        <h2>Great job!</h2>
+        <p>Back to the list we go...</p>
         </div>
         `
       );
       setTimeout(function() {
         window.open("/dashboard.html", "_self");
-      }, 4000);
+      }, 3000);
     }
   });
 }

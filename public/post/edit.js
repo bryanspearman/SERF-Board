@@ -39,13 +39,13 @@ function onEditSubmit(event) {
     callback: post => {
       $(".form-container").html(
         `<div class="successMsg center">
-        <p>Ok your edits are saved!<br />
-        We heading back to the list...</p>
+        <h2>Your edits are saved!</h2>
+        <p>Heading back to the list...</p>
         </div>`
       );
       setTimeout(function() {
         window.open("/dashboard.html", "_self");
-      }, 4000);
+      }, 3000);
     }
   });
 }

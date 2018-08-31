@@ -58,8 +58,8 @@ function onPostDelete(event) {
             </header>
             <div class="form-container">
               <div class="successMsg center">
-                <p>Just a second, we\'ll get this deleted.<br />
-              Stand by...</p>
+                <h2>Getting get this deleted</h2>
+              <p>Stand by...</p>
               </div>
             </div>`
         );
