@@ -119,6 +119,11 @@ input:-webkit-autofill:active {
     padding: 10px 20px;
   }
 
+  header p {
+    text-align: right;
+    margin-top: -50px;
+  }
+
   nav header p {
     text-align: right;
     margin-top: -50px;
@@ -145,16 +150,24 @@ input:-webkit-autofill:active {
   }
 
   .landingPage {
-    padding-top: 40px;
+    padding-top: 10px;
     margin: 0 auto;
-    width: 600px;
+    width: 100%;
     text-align: center;
   }
 
+  h1 {
+    padding: 20px 0px;
+  }
+
   .action_pages {
-    padding-top: 20px;
+    padding-top: 10px;
     margin: 0 auto;
-    width: 600px;
+    width: 100%;
+  }
+
+  .action_pages h1 {
+    padding: 20px 0px 10px 0px;
   }
 
   .center {
@@ -530,6 +543,10 @@ input:-webkit-autofill:active {
 
   main {
     font-size: 14px;
+  }
+
+  header p {
+    text-align: center;
   }
 
   nav ul {
@@ -986,6 +1003,10 @@ input:-webkit-autofill:active {
     font-size: 14px;
   }
 
+  header p {
+    text-align: center;
+  }
+
   nav ul {
     margin: 0px;
     padding: 25px;
@@ -1422,6 +1443,10 @@ input:-webkit-autofill:active {
 
   main {
     font-size: 14px;
+  }
+
+  header p {
+    text-align: center;
   }
 
   nav ul {
