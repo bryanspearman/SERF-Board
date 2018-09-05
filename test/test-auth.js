@@ -1,22 +1,22 @@
+/* global describe, it, before, after, beforeEach, afterEach */
 'use strict';
 global.DATABASE_URL = 'mongodb://localhost:27017/test-biff-assist';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const jwt = require('jsonwebtoken');
 
-const { app, startServer, closeServer } = require('../app/server');
-const { User } = require('../app/user.model');
-const { JWT_SECRET } = require('../app/config');
+const { app, startServer, closeServer } = require('../app/server.js');
+const { User } = require('../app/user.model.js');
+const { JWT_SECRET } = require('../app/config.js');
 
 const expect = chai.expect;
 
 chai.use(chaiHttp);
 
 describe('Auth endpoints', function() {
-    const _id = '5b8ef4c360220709c79cd18b';
-    const username = 'exampleUser';
-    const password = 'examplePass';
-    const name = 'Example Name';
+    const name = 'John Doe';
+    const username = 'johndoe';
+    const password = 'password11';
 
     before(function() {
         return startServer();
@@ -29,10 +29,9 @@ describe('Auth endpoints', function() {
     beforeEach(function() {
         return User.hashPassword(password).then(password =>
             User.create({
-                _id,
+                name,
                 username,
-                password,
-                name
+                password
             })
         );
     });
@@ -46,8 +45,9 @@ describe('Auth endpoints', function() {
             return chai
                 .request(app)
                 .post('/api/user/login')
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .send({})
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
@@ -63,8 +63,8 @@ describe('Auth endpoints', function() {
                 .request(app)
                 .post('/api/user/login')
                 .send({ username: 'wrongUsername', password })
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
@@ -80,8 +80,8 @@ describe('Auth endpoints', function() {
                 .request(app)
                 .post('/api/user/login')
                 .send({ username, password: 'wrongPassword' })
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
@@ -105,10 +105,10 @@ describe('Auth endpoints', function() {
                     const payload = jwt.verify(token, JWT_SECRET, {
                         algorithm: ['HS256']
                     });
-                    expect(payload.user).to.deep.equal({
-                        _id,
-                        username,
-                        name
+                    expect(payload.user).to.deep.include({
+                        _id: payload.user._id,
+                        name,
+                        username
                     });
                 });
         });
@@ -119,8 +119,8 @@ describe('Auth endpoints', function() {
             return chai
                 .request(app)
                 .post('/api/user/refresh')
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
@@ -147,8 +147,8 @@ describe('Auth endpoints', function() {
                 .request(app)
                 .post('/api/user/refresh')
                 .set('Authorization', `Bearer ${token}`)
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
@@ -165,7 +165,7 @@ describe('Auth endpoints', function() {
                     user: {
                         username
                     },
-                    exp: Math.floor(Date.now() / 1000) - 10 // Expired ten seconds ago
+                    exp: Math.floor(Date.now() / 1000) - 30 // Expired ten seconds ago
                 },
                 JWT_SECRET,
                 {
@@ -178,8 +178,8 @@ describe('Auth endpoints', function() {
                 .request(app)
                 .post('/api/user/refresh')
                 .set('authorization', `Bearer ${token}`)
-                .then(() =>
-                    expect.fail(null, null, 'Request should not succeed')
+                .then(response =>
+                    expect(response, 'Request should not succeed')
                 )
                 .catch(err => {
                     if (err instanceof chai.AssertionError) {
