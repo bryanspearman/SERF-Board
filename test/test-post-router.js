@@ -196,7 +196,7 @@ describe('/api/post route CRUD tests', function() {
                         .set('authorization', `Bearer ${token}`)
                         .send(newPostData);
                 })
-                .then(res => {
+                .then(() => {
                     return Post.findById(newPostData.id);
                 })
                 .then(post => {
