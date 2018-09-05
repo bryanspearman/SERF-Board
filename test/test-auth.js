@@ -1,13 +1,12 @@
 /* global describe, it, before, after, beforeEach, afterEach */
 'use strict';
-global.DATABASE_URL = 'mongodb://localhost:27017/test-biff-assist';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const jwt = require('jsonwebtoken');
 
 const { app, startServer, closeServer } = require('../app/server.js');
 const { User } = require('../app/user.model.js');
-const { JWT_SECRET } = require('../app/config.js');
+const { JWT_SECRET, MONGO_TEST_URL } = require('../app/config.js');
 
 const expect = chai.expect;
 
@@ -19,7 +18,7 @@ describe('Auth endpoints', function() {
     const password = 'password11';
 
     before(function() {
-        return startServer();
+        return startServer(MONGO_TEST_URL);
     });
 
     after(function() {

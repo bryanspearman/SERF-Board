@@ -1,9 +1,17 @@
+/* global describe, it, before, after, beforeEach, afterEach */
+'use strict';
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const jwt = require('jsonwebtoken');
 
+const { app, startServer, closeServer } = require('../app/server.js');
+const { User } = require('../app/user.model.js');
 const { Post } = require('../app/post.model.js');
-const { startServer, closeServer, app } = require('../app/server.js');
-const { MONGO_TEST_URL } = require('../app/config.js');
+const { JWT_SECRET, MONGO_TEST_URL } = require('../app/config.js');
+
+const should = chai.should();
+
+chai.use(chaiHttp);
 
 const {
     createMockDatabase,
@@ -11,50 +19,87 @@ const {
     getNewFakePost
 } = require('./database-helper.js');
 
-const should = chai.should();
-chai.use(chaiHttp);
+describe('/api/post route CRUD tests', function() {
+    const _id = User._id;
+    const name = 'John Doe';
+    const username = 'johndoe';
+    const password = 'password';
 
-describe('/api/post api tests', function() {
     before(function() {
         return startServer(MONGO_TEST_URL);
-    });
-
-    beforeEach(function() {
-        return createMockDatabase();
-    });
-
-    afterEach(function() {
-        return deleteMockDatabase();
     });
 
     after(function() {
         return closeServer();
     });
 
-    describe('Read/GET Posts', function() {
-        it('should return all existing posts', function() {
-            let response;
-            return chai
-                .request(app)
-                .get('/')
-                .then(_res => {
-                    response = _res;
+    beforeEach(function() {
+        return createMockDatabase().then(
+            User.hashPassword(password).then(password =>
+                User.create({
+                    _id,
+                    name,
+                    username,
+                    password
+                })
+            )
+        );
+    });
+
+    afterEach(function() {
+        return deleteMockDatabase().then(User.remove({}));
+    });
+
+    describe('GET Posts', function() {
+        it('Should GET Posts by user ID', function() {
+            const token = jwt.sign(
+                {
+                    user: {
+                        username
+                    }
+                },
+                JWT_SECRET,
+                {
+                    algorithm: 'HS256',
+                    subject: username,
+                    expiresIn: '7d'
+                }
+            );
+            return Post.find({ user: User._id })
+                .then(post => {
+                    post.should.be.a('array');
+                    return chai
+                        .request(app)
+                        .get('/api/post/')
+                        .set('authorization', `Bearer ${token}`);
+                })
+                .then(response => {
                     response.should.have.status(200);
                     response.should.be.json;
-                    response.body.should.be.a('array');
+                    response.should.be.a('object');
                     response.body.should.have.lengthOf.at.least(1);
-                    return Post.count();
-                })
-                .then(count => {
-                    response.body.should.have.lengthOf(count);
                 });
         });
 
-        it('should return posts with right fields', function() {
+        it('Should return posts with correct fields', function() {
+            const token = jwt.sign(
+                {
+                    user: {
+                        username
+                    }
+                },
+                JWT_SECRET,
+                {
+                    algorithm: 'HS256',
+                    subject: username,
+                    expiresIn: '7d'
+                }
+            );
             return chai
                 .request(app)
-                .get('/')
-                .then(function(response) {
+                .get('/api/post')
+                .set('authorization', `Bearer ${token}`)
+                .then(response => {
                     response.should.have.status(200);
                     response.should.be.json;
                     response.body.should.be.a('array');
@@ -74,14 +119,27 @@ describe('/api/post api tests', function() {
     });
 
     describe('Create/POST Posts', function() {
-        it('should add a new post', function() {
+        it('Should create a new post', function() {
             const newPost = getNewFakePost();
-
+            const token = jwt.sign(
+                {
+                    user: {
+                        username
+                    }
+                },
+                JWT_SECRET,
+                {
+                    algorithm: 'HS256',
+                    subject: username,
+                    expiresIn: '7d'
+                }
+            );
             return chai
                 .request(app)
-                .post('/')
+                .post('/api/post')
+                .set('authorization', `Bearer ${token}`)
                 .send(newPost)
-                .then(function(res) {
+                .then(res => {
                     res.should.have.status(201);
                     res.should.be.json;
                     res.body.should.be.a('object');
@@ -100,7 +158,7 @@ describe('/api/post api tests', function() {
                     );
                     return Post.findById(res.body.id);
                 })
-                .then(function(post) {
+                .then(post => {
                     post.should.be.a('object');
                     post.title.should.equal(newPost.title);
                     post.response.should.equal(newPost.response);
@@ -115,6 +173,19 @@ describe('/api/post api tests', function() {
                 title: 'Legacy Assurance Administrator',
                 response: 'dogs dogs dogs'
             };
+            const token = jwt.sign(
+                {
+                    user: {
+                        username
+                    }
+                },
+                JWT_SECRET,
+                {
+                    algorithm: 'HS256',
+                    subject: username,
+                    expiresIn: '7d'
+                }
+            );
             return Post.findOne()
                 .then(post => {
                     post.should.be.a('object');
@@ -122,6 +193,7 @@ describe('/api/post api tests', function() {
                     return chai
                         .request(app)
                         .put(`/api/post/${post.id}`)
+                        .set('authorization', `Bearer ${token}`)
                         .send(newPostData);
                 })
                 .then(res => {
@@ -139,12 +211,26 @@ describe('/api/post api tests', function() {
     describe('Remove/DELETE Posts', function() {
         it('should delete a post by id', function() {
             let postToDelete;
+            const token = jwt.sign(
+                {
+                    user: {
+                        username
+                    }
+                },
+                JWT_SECRET,
+                {
+                    algorithm: 'HS256',
+                    subject: username,
+                    expiresIn: '7d'
+                }
+            );
             return Post.findOne()
                 .then(_post => {
                     postToDelete = _post;
                     return chai
                         .request(app)
-                        .delete(`/api/post/${postToDelete.id}`);
+                        .delete(`/api/post/${postToDelete.id}`)
+                        .set('authorization', `Bearer ${token}`);
                 })
                 .then(res => {
                     res.should.have.status(204);

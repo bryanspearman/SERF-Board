@@ -16,6 +16,7 @@ function createMockDatabase() {
     const seedData = [];
     for (let i = 1; i <= 10; i++) {
         seedData.push({
+            _id: User._id,
             title: faker.name.title(),
             response: faker.lorem.sentence(),
             receivedMessage: faker.lorem.text()
@@ -48,6 +49,7 @@ function deleteMockDatabase() {
 
 function getNewFakePost() {
     return {
+        user: User._id,
         title: faker.name.title(),
         response: faker.lorem.sentence(),
         receivedMessage: faker.lorem.text(),
