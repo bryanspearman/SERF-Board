@@ -2,31 +2,31 @@
 const colors = require('colors/safe');
 
 module.exports = {
-	logInfo,
-	logWarn,
-	logSuccess,
-	logError
+    logInfo,
+    logWarn,
+    logSuccess,
+    logError
 };
 
 function logInfo(message) {
-	console.log(colors.blue(`${timestamp()} [INFO] ${message}`));
+    console.log(colors.blue(`${timestamp()} [INFO] ${message}`));
 }
 
 function logWarn(message) {
-	console.log(colors.yellow(`${timestamp()} [WARN] ${message}`));
+    console.log(colors.yellow(`${timestamp()} [WARN] ${message}`));
 }
 
 function logSuccess(message) {
-	console.log(colors.green(`${timestamp()} [SUCCESS] ${message}`));
+    console.log(colors.green(`${timestamp()} [SUCCESS] ${message}`));
 }
 
 function logError(message) {
-	console.log(colors.red(`${timestamp()} [ERROR] ${message}`));
+    console.log(colors.red(`${timestamp()} [ERROR] ${message}`));
 }
 
 function timestamp() {
-	const now = new Date();
-	const hour = now.getHours();
-	const minutes = now.getMinutes();
-	return `[${hour}:${minutes}]`;
+    const now = new Date();
+    const hour = now.getHours();
+    const minutes = now.getMinutes();
+    return `[${hour}:${minutes}]`;
 }
