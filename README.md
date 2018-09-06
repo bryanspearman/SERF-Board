@@ -58,5 +58,6 @@ Bryan and Anne Spearman
 
 [Learn to SERF here]
 
-[try out the live demo here]: https://gentle-lake-36024.herokuapp.com/
+[Try it out]: https://gentle-lake-36024.herokuapp.com/
+[Learn to SERF here]: https://gentle-lake-36024.herokuapp.com/
 [bill eddy's biff concept]: https://www.highconflictinstitute.com/bookstores/biff
