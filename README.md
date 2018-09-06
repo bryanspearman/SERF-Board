@@ -1,7 +1,7 @@
 # S.E.R.F. Board (Script Effective Responses Fast) [![Build Status](https://travis-ci.com/bryanspearman/biff-assist.svg?branch=master)](https://travis-ci.com/bryanspearman/biff-assist)
 
-A web application designed to assist people with writing effective responses to high conflict messages that they have received. [Bill Eddy's BIFF concept] (Brief, Informative, Friendly, Firm) is at the center of this little tool. So take BIFF and your S.E.R.F. Board for a spin!<br>
-[Try out the live demo here]
+A web application designed to assist people with writing effective responses to high conflict messages that they have received. [Bill Eddy's BIFF concept] (Brief, Informative, Friendly, Firm) is at your finger tips to keep you on track. So it's time to learn to S.E.R.F.!<br>
+[Try it out]
 
 ## Motivation:
 
@@ -25,35 +25,38 @@ Dashboard (Small Screens)
 
 - HTML5
 - CSS3
-- JavaScript (ES6)
+- (ES6) JavaScript
 - jQuery
-- Node
+- NodeJS
 - MongoDB
 - Express
 - Mongoose
 - mLab
 - Heroku
 - Travis
-- Git
+- Mocha
+- Chai
+- CLI
 - GitHub
 - Custom responsive media queries
 - Semantic HTML
 - ARIA compliance
-- Easy-to-understand code modularization
+- Reusable code modularization
 
 ## Coming Soon
 
 Version 2
 
 - React front-end
+- NEW Feature: Create Appropriate Length Messages (C.A.L.M.)
 
 ## Author
 
-Bryan Spearman
+Bryan and Anne Spearman
 
 ## Demo
 
-[Try out the live demo here]
+[Learn to SERF here]
 
 [try out the live demo here]: https://gentle-lake-36024.herokuapp.com/
 [bill eddy's biff concept]: https://www.highconflictinstitute.com/bookstores/biff

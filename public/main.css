@@ -75,6 +75,11 @@ input:-webkit-autofill:active {
     vertical-align: top;
   }
 
+  .instructions {
+    font-style: italic;
+    font-size: 12px;
+  }
+
   h2 {
     font-size: 18px;
   }
@@ -150,10 +155,15 @@ input:-webkit-autofill:active {
   }
 
   .landingPage {
-    padding-top: 10px;
+    padding: 10px 5px;
     margin: 0 auto;
     width: 100%;
     text-align: center;
+    background: #ffffff;
+  }
+
+  .landingpage h1 {
+    font-size: 0.75em;
   }
 
   h1 {
@@ -479,6 +489,32 @@ input:-webkit-autofill:active {
     margin-top: 20px;
   }
 
+  .describeApp {
+    padding: 0px 25px;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .describeApp p {
+    padding-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .describeApp ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .describeApp h1 {
+    font-size: 1.2em;
+  }
+
+  .describeApp h2 {
+    margin-top: 20px;
+  }
+
   footer {
     padding: 30px;
     font-size: 11px;
@@ -507,11 +543,12 @@ input:-webkit-autofill:active {
   }
 
   .start {
+    padding: 10px;
     margin-bottom: 20px;
   }
 }
 
-/* **************  601 to 800px ******************* */
+/* **************  601 to 799px ******************* */
 @media only screen and (min-width: 800px) {
   nav {
     display: table-cell;
@@ -611,19 +648,6 @@ input:-webkit-autofill:active {
     text-align: center;
   }
 
-  .landingPage {
-    padding-top: 40px;
-    margin: 0 auto;
-    width: 600px;
-    text-align: center;
-  }
-
-  .action_pages {
-    padding-top: 20px;
-    margin: 0 auto;
-    width: 600px;
-  }
-
   .center {
     text-align: center;
     padding: 20px;
@@ -673,7 +697,7 @@ input:-webkit-autofill:active {
 
   input[type="submit"] {
     background: #4d9590;
-    width: 40%;
+    width: 25%;
     height: 40px;
     border: none;
     padding: 5px;
@@ -692,7 +716,7 @@ input:-webkit-autofill:active {
 
   input[type="reset"] {
     background: #ad4a4a;
-    width: 40%;
+    width: 25%;
     height: 40px;
     border: none;
     padding: 5px;
@@ -933,6 +957,33 @@ input:-webkit-autofill:active {
     margin-top: 20px;
   }
 
+  .describeApp {
+    padding: 0px 25px;
+    width: 60%;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .describeApp p {
+    padding-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .describeApp ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .describeApp h1 {
+    font-size: 1.2em;
+  }
+
+  .describeApp h2 {
+    margin-top: 20px;
+  }
+
   footer {
     padding: 30px;
     font-size: 11px;
@@ -961,7 +1012,36 @@ input:-webkit-autofill:active {
   }
 
   .start {
-    margin-bottom: 20px;
+    float: left;
+    padding: 20px 20px 0px 20px;
+    /* margin-bottom: 20px; */
+    width: 20%;
+    display: table-cell;
+  }
+  .launch {
+    float: right;
+    padding: 20px 0px 20px 10px;
+    width: 71%;
+    height: 190px;
+    background: #fafafa;
+    display: table-cell;
+  }
+
+  .launch h1 {
+    margin-bottom: 30px;
+  }
+
+  .landingPage {
+    padding: 0px;
+    margin: 20px auto;
+    width: 75%;
+    background: #fff;
+  }
+
+  .action_pages {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 600px;
   }
 }
 
@@ -989,10 +1069,6 @@ input:-webkit-autofill:active {
     margin: 0px;
     padding: 0px;
     vertical-align: top;
-  }
-
-  .smlogo {
-    visibility: hidden;
   }
 
   h2 {
@@ -1055,19 +1131,6 @@ input:-webkit-autofill:active {
     margin: 0px;
     background: #f2ebe2;
     text-align: center;
-  }
-
-  .landingPage {
-    padding-top: 40px;
-    margin: 0 auto;
-    width: 600px;
-    text-align: center;
-  }
-
-  .action_pages {
-    padding-top: 20px;
-    margin: 0 auto;
-    width: 600px;
   }
 
   .center {
@@ -1375,6 +1438,33 @@ input:-webkit-autofill:active {
     margin-top: 20px;
   }
 
+  .describeApp {
+    padding: 0px 25px;
+    width: 50%;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .describeApp p {
+    padding-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .describeApp ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .describeApp h1 {
+    font-size: 1.2em;
+  }
+
+  .describeApp h2 {
+    margin-top: 20px;
+  }
+
   footer {
     padding: 30px;
     font-size: 11px;
@@ -1403,7 +1493,36 @@ input:-webkit-autofill:active {
   }
 
   .start {
-    margin-bottom: 20px;
+    float: left;
+    padding: 20px 20px 0px 20px;
+    /* margin-bottom: 20px; */
+    width: 20%;
+    display: table-cell;
+  }
+  .launch {
+    float: right;
+    padding: 20px 0px 20px 10px;
+    width: 71%;
+    height: 190px;
+    background: #fafafa;
+    display: table-cell;
+  }
+
+  .launch h1 {
+    margin-bottom: 30px;
+  }
+
+  .landingPage {
+    padding: 0px;
+    margin: 20px auto;
+    width: 55%;
+    background: #fff;
+  }
+
+  .action_pages {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 600px;
   }
 }
 
@@ -1431,10 +1550,6 @@ input:-webkit-autofill:active {
     margin: 0px;
     padding: 0px;
     vertical-align: top;
-  }
-
-  .smlogo {
-    visibility: hidden;
   }
 
   h2 {
@@ -1497,19 +1612,6 @@ input:-webkit-autofill:active {
     margin: 0px;
     background: #f2ebe2;
     text-align: center;
-  }
-
-  .landingPage {
-    padding-top: 40px;
-    margin: 0 auto;
-    width: 600px;
-    text-align: center;
-  }
-
-  .action_pages {
-    padding-top: 40px;
-    margin: 0 auto;
-    width: 600px;
   }
 
   .center {
@@ -1813,6 +1915,33 @@ input:-webkit-autofill:active {
     margin-top: 20px;
   }
 
+  .describeApp {
+    padding: 0px 25px;
+    width: 40%;
+    margin: 0px auto;
+    line-height: 2em;
+  }
+
+  .describeApp p {
+    padding-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .describeApp ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .describeApp h1 {
+    font-size: 1.2em;
+  }
+
+  .describeApp h2 {
+    margin-top: 20px;
+  }
+
   footer {
     padding: 30px;
     font-size: 11px;
@@ -1841,6 +1970,35 @@ input:-webkit-autofill:active {
   }
 
   .start {
-    margin-bottom: 20px;
+    float: left;
+    padding: 20px 20px 0px 20px;
+    /* margin-bottom: 20px; */
+    width: 20%;
+    display: table-cell;
+  }
+  .launch {
+    float: right;
+    padding: 20px 0px 20px 10px;
+    width: 71%;
+    height: 190px;
+    background: #fafafa;
+    display: table-cell;
+  }
+
+  .launch h1 {
+    margin-bottom: 30px;
+  }
+
+  .landingPage {
+    padding: 0px;
+    margin: 20px auto;
+    width: 45%;
+    background: #fff;
+  }
+
+  .action_pages {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 600px;
   }
 }
