@@ -1512,6 +1512,10 @@ input:-webkit-autofill:active {
     margin-bottom: 30px;
   }
 
+  .launch p {
+    padding: 20px;
+  }
+
   .landingPage {
     padding: 0px;
     margin: 20px auto;
