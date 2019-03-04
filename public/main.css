@@ -1037,7 +1037,7 @@ input:-webkit-autofill:active {
 
   .landingPage {
     padding: 0px;
-    margin: 20px auto;
+    margin: 0 auto;
     width: 75%;
     background: #fff;
   }
@@ -1522,7 +1522,7 @@ input:-webkit-autofill:active {
 
   .landingPage {
     padding: 0px;
-    margin: 20px auto;
+    margin: 0 auto;
     width: 55%;
     background: #fff;
   }
@@ -2002,8 +2002,8 @@ input:-webkit-autofill:active {
   }
 
   .landingPage {
-    padding: 0px;
-    margin: 20px auto;
+    padding: 0;
+    margin: 0 auto;
     width: 45%;
     background: #fff;
   }
